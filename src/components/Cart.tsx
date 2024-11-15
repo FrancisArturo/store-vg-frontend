@@ -65,14 +65,14 @@ export const Cart: React.FC = () => {
 		<Dialog
 			open={isOpen}
 			onClose={() => setIsOpenCart(false)}
-			className="relative z-10"
+			className="relative"
 		>
 			<DialogBackdrop
 				transition
-				className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity duration-500 ease-in-out data-[closed]:opacity-0"
+				className="fixed z-20 inset-0 bg-gray-500 bg-opacity-75 transition-opacity duration-500 ease-in-out data-[closed]:opacity-0"
 			/>
 
-			<div className="fixed inset-0 overflow-hidden">
+			<div className="fixed inset-0 overflow-hidden z-30">
 				<div className="absolute inset-0 overflow-hidden">
 					<div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
 						<DialogPanel

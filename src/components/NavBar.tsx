@@ -210,14 +210,9 @@ export const NavBar: React.FC = () => {
 						<TabGroup className="mt-2">
 							<div className="border-b border-gray-200">
 								<TabList className="-mb-px flex space-x-8 px-4">
-									{navigation.categories.map((category) => (
-										<Tab
-											key={category.name}
-											className="flex-1 whitespace-nowrap border-b-2 border-transparent px-1 py-4 text-base font-medium text-gray-900 data-[selected]:border-indigo-600 data-[selected]:text-indigo-600"
-										>
-											{category.name}
-										</Tab>
-									))}
+									<Tab className="flex-1 whitespace-nowrap border-b-2 border-transparent px-1 py-4 text-base font-medium text-gray-900 data-[selected]:border-indigo-600 data-[selected]:text-indigo-600">
+										Categories
+									</Tab>
 								</TabList>
 							</div>
 							<TabPanels as={Fragment}>
@@ -226,25 +221,28 @@ export const NavBar: React.FC = () => {
 										key={category.name}
 										className="space-y-10 px-4 pb-8 pt-10"
 									>
-										<div className="grid grid-cols-2 gap-x-4">
-											{category.featured.map((item) => (
-												<div key={item.name} className="group relative text-sm">
+										<div className="grid grid-cols-2 gap-x-4 gap-y-4">
+											{navbarCatImages.map((item) => (
+												<div
+													key={item.title}
+													className="group relative text-sm"
+												>
 													<div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
 														<img
-															alt={item.imageAlt}
-															src={item.imageSrc}
+															alt={item.title}
+															src={item.image}
 															className="object-cover object-center"
 														/>
 													</div>
 													<a
-														href={item.href}
+														href="{item.href}"
 														className="mt-6 block font-medium text-gray-900"
 													>
 														<span
 															aria-hidden="true"
 															className="absolute inset-0 z-10"
 														/>
-														{item.name}
+														{item.title}
 													</a>
 													<p aria-hidden="true" className="mt-1">
 														Shop now
@@ -252,32 +250,6 @@ export const NavBar: React.FC = () => {
 												</div>
 											))}
 										</div>
-										{category.sections.map((section) => (
-											<div key={section.name}>
-												<p
-													id={`${category.id}-${section.id}-heading-mobile`}
-													className="font-medium text-gray-900"
-												>
-													{section.name}
-												</p>
-												<ul
-													role="list"
-													aria-labelledby={`${category.id}-${section.id}-heading-mobile`}
-													className="mt-6 flex flex-col space-y-6"
-												>
-													{section.items.map((item) => (
-														<li key={item.name} className="flow-root">
-															<a
-																href={item.href}
-																className="-m-2 block p-2 text-gray-500"
-															>
-																{item.name}
-															</a>
-														</li>
-													))}
-												</ul>
-											</div>
-										))}
 									</TabPanel>
 								))}
 							</TabPanels>
@@ -355,7 +327,7 @@ export const NavBar: React.FC = () => {
 
 							{/* Logo */}
 							<div className="ml-4 flex lg:ml-0">
-								<a href="/products">
+								<a href="/">
 									<span className="sr-only">Your Company</span>
 									<img
 										alt=""
@@ -378,7 +350,7 @@ export const NavBar: React.FC = () => {
 
 											<PopoverPanel
 												transition
-												className="absolute inset-x-0 top-full text-sm text-gray-500 transition data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+												className="absolute inset-x-0 top-full text-sm text-gray-500 transition data-[closed]:opacity-0 data-[enter]:duration-0 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
 											>
 												{/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
 												<div
@@ -386,7 +358,7 @@ export const NavBar: React.FC = () => {
 													className="absolute inset-0 top-1/2 bg-white shadow"
 												/>
 
-												<div className="relative bg-black">
+												<div className="relative bg-black z-20">
 													<div className="mx-auto max-w-7xl px-8">
 														<div className="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
 															<div className="grid grid-cols-2 h-[500px] gap-3">
@@ -406,8 +378,9 @@ export const NavBar: React.FC = () => {
 																))}
 															</div>
 
-															<div className="flex flex-col row-start-1 text-5xl gap-20 justify-center ">
+															<div className="flex flex-col row-start-1 text-5xl gap-20 justify-start ">
 																{categoriesFound.map((category, index) => (
+																	// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 																	<div key={index} className="flex">
 																		{/* biome-ignore lint/a11y/useKeyWithMouseEvents: <explanation> */}
 																		<a

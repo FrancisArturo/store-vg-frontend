@@ -88,6 +88,7 @@ import { useAppSelector } from "../hooks/store";
 import { useParams } from "react-router-dom";
 import { useCheckCartProduct } from "../hooks/useCheckCartProduct";
 import type { Product } from "../types";
+import { useCartActions } from "../hooks/useCartActions";
 
 const product = {
 	name: "Basic Tee 6-Pack",
@@ -154,6 +155,7 @@ export const ProductPage = () => {
 
 	const { pid } = useParams();
 	const { products: productsFound } = useAppSelector((state) => state.products);
+	const { addProductToCart } = useCartActions();
 
 	const { isProductInCart } = useCheckCartProduct();
 
@@ -173,9 +175,9 @@ export const ProductPage = () => {
 		setIndexSlide(indexSlide + 1);
 	};
 
-	const isItemSelectedSlider = (index: number) => {
-		return indexSlide === index;
-	};
+	// const isItemSelectedSlider = (index: number) => {
+	// 	return indexSlide === index;
+	// };
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
@@ -194,42 +196,41 @@ export const ProductPage = () => {
 					<div className="pt-6">
 						<nav aria-label="Breadcrumb">
 							<ol className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-								{product.breadcrumbs.map((breadcrumb) => (
-									<li key={breadcrumb.id}>
-										<div className="flex items-center">
-											<a
-												href={breadcrumb.href}
-												className="mr-2 text-sm font-medium text-gray-900"
-											>
-												{breadcrumb.name}
-											</a>
-											<svg
-												fill="currentColor"
-												width={16}
-												height={20}
-												viewBox="0 0 16 20"
-												aria-hidden="true"
-												className="h-5 w-4 text-gray-300"
-											>
-												<path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-											</svg>
-										</div>
-									</li>
-								))}
+								<li>
+									<div className="flex items-center">
+										<a
+											href={`/products/${productFound.category.toLowerCase()}`}
+											className="mr-2 text-sm font-medium text-gray-900"
+										>
+											{productFound.category}
+										</a>
+										<svg
+											fill="currentColor"
+											width={16}
+											height={20}
+											viewBox="0 0 16 20"
+											aria-hidden="true"
+											className="h-5 w-4 text-gray-300"
+										>
+											<path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+										</svg>
+									</div>
+								</li>
+
 								<li className="text-sm">
 									<a
 										href={product.href}
 										aria-current="page"
 										className="font-medium text-gray-500 hover:text-gray-600"
 									>
-										{product.name}
+										{productFound.title}
 									</a>
 								</li>
 							</ol>
 						</nav>
 
 						{/* Product info */}
-						<div className="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24">
+						<div className="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 flex flex-col">
 							<div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
 								<h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
 									{productFound?.title}
@@ -237,7 +238,7 @@ export const ProductPage = () => {
 							</div>
 
 							{/* Options */}
-							<div className="mt-4 lg:row-span-3 lg:mt-0">
+							<div className="mt-4 lg:row-span-3 lg:mt-0 order-last">
 								<h2 className="sr-only">Product information</h2>
 								<p className="text-3xl tracking-tight text-gray-900">
 									${productFound?.price}
@@ -312,7 +313,7 @@ export const ProductPage = () => {
 									{isProductInCart(productFound) ? (
 										<button
 											type="submit"
-											className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-gray-400 px-8 py-3 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+											className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-gray-300 px-8 py-3 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
 											disabled
 										>
 											Already in Cart
@@ -320,7 +321,8 @@ export const ProductPage = () => {
 									) : (
 										<button
 											type="submit"
-											className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-black px-8 py-3 text-base font-medium text-white hover:bg-gray-800  focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+											className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-gray-500  px-8 py-3 text-base font-medium text-white hover:bg-black hover:text-white  focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 duration-500"
+											onClick={() => addProductToCart(productFound)}
 										>
 											Add to Cart
 										</button>
@@ -328,40 +330,49 @@ export const ProductPage = () => {
 								</form>
 							</div>
 
-							<div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
-								<div className="max-w-[600px] h-[600px] w-full m-auto pb-16 px-4 relative group">
+							<div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6 ">
+								<div className="md:max-w-[600px] md:h-[600px] w-full m-auto pb-16 px-4 relative group max-w-[400px] h-[400px]">
 									<div
 										style={{
 											backgroundImage: `url(${productFound?.images[indexSlide]})`,
 										}}
 										className="w-full h-full rounded-2xl bg-center bg-cover duration-500 bg-gray-200"
 									/>
-									<div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black text-white cursor-pointer">
-										<BsChevronCompactLeft onClick={() => prevSlide()} />
+									{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+									<div
+										className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-gray-400 text-white cursor-pointer hover:bg-black duration-300"
+										onClick={() => prevSlide()}
+									>
+										<BsChevronCompactLeft />
 									</div>
-									<div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black text-white cursor-pointer">
-										<BsChevronCompactRight onClick={() => nextSlide()} />
+									{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+									<div
+										className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-gray-400 text-white cursor-pointer hover:bg-black duration-300 "
+										onClick={() => nextSlide()}
+									>
+										<BsChevronCompactRight />
 									</div>
-									<div className="flex w-[100%] h-[100%] flex-wrap mt-10">
-										{productFound?.images.map((image, index) => (
-											<div
-												className="h-[115px] max-h-[64px] relative w-[20%] ml-0 mr-10 mb-8 mt-0"
-												key={index}
-											>
-												{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-												<img
-													src={image}
-													alt=""
-													className={
-														index === indexSlide
-															? "bg-gray-200"
-															: "bg-gray-200 opacity-[.5]"
-													}
-													onClick={() => setIndexSlide(index)}
-												/>
-											</div>
-										))}
-									</div>
+								</div>
+								<div className="flex w-[100%] h-auto flex-wrap mt-2 gap-x-2 gap-y-2">
+									{productFound?.images.map((image, index) => (
+										<div
+											className="h-[115px] relative w-[20%] max-w-[84px] max-h-[84px] ml-0 mr-5 mb-8 mt-0 cursor-pointer "
+											// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+											key={index}
+										>
+											{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+											<img
+												src={image}
+												alt=""
+												className={
+													index === indexSlide
+														? "bg-gray-200 border-solid border-t-4 border-black w-[100%] h-[100%] "
+														: "bg-gray-200 opacity-[.5] w-[100%] h-[100%]"
+												}
+												onClick={() => setIndexSlide(index)}
+											/>
+										</div>
+									))}
 								</div>
 							</div>
 						</div>
