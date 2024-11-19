@@ -1,5 +1,4 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
-
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useAppSelector } from "../hooks/store";
 import { useFiltersActions } from "../hooks/useFiltersActions";
@@ -7,20 +6,13 @@ import type { CategoryFound, Product } from "../types";
 import { searchBrands } from "../services/searchBrands";
 import { BiMinus, BiSolidSend, BiSolidXCircle } from "react-icons/bi";
 
-// const sortOptions = [
-// 	{ name: "Most Popular", href: "#", current: true },
-// 	{ name: "Best Rating", href: "#", current: false },
-// 	{ name: "Newest", href: "#", current: false },
-// 	{ name: "Price: Low to High", href: "#", current: false },
-// 	{ name: "Price: High to Low", href: "#", current: false },
-// ];
-
 interface Props {
 	products: Product[];
 	category?: CategoryFound;
+	isLoading: boolean;
 }
 
-export const Filters: React.FC<Props> = ({ products, category }) => {
+export const Filters: React.FC<Props> = ({ products, category, isLoading }) => {
 	// const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
 	const filters = useAppSelector((store) => store.filters);
@@ -41,13 +33,16 @@ export const Filters: React.FC<Props> = ({ products, category }) => {
 				{/* Mobile filter dialog */}
 
 				<main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-					<div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24 flex-col">
-						<div className="flex">
-							<h1 className="text-4xl font-bold tracking-tight text-gray-900">
-								{category?.title}
-							</h1>
-							<p>{category?.quantity}</p>
-						</div>
+					<div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-10 flex-col">
+						{!isLoading && category && (
+							<div className="flex">
+								<h1 className="text-4xl font-bold tracking-tight text-gray-900">
+									{category.title}
+								</h1>
+								<p className="font-medium ml-2">{category.quantity}</p>
+							</div>
+						)}
+
 						<div className="flex md:gap-x-10 items-end mt-20 self-end flex-row-reverse gap-y-7 justify-between w-[100%]">
 							{filters.brand && (
 								<div className="text-gray-700 text-sm font-medium flex">

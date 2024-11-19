@@ -371,14 +371,14 @@ export const NavBar: React.FC = () => {
 																		className={
 																			catSelected.length === 0 ||
 																			catSelected === item.title
-																				? "bg-cover bg-white duration-500"
-																				: "bg-cover bg-white opacity-10 duration-500"
+																				? "bg-cover bg-white duration-300 rounded-lg"
+																				: "bg-cover bg-white opacity-10 duration-300 rounded-lg"
 																		}
 																	/>
 																))}
 															</div>
 
-															<div className="flex flex-col row-start-1 text-5xl gap-20 justify-start ">
+															<div className="flex flex-col row-start-1 text-5xl gap-20 justify-start font-medium">
 																{categoriesFound.map((category, index) => (
 																	// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 																	<div key={index} className="flex">
@@ -391,8 +391,17 @@ export const NavBar: React.FC = () => {
 																			}
 																			onMouseOut={() => setCatSelected("")}
 																		>
-																			{category.title}
+																			<p>{category.title}</p>
 																		</a>
+																		<p
+																			className={
+																				catSelected === category.title
+																					? "text-xs text-gray-50 ml-1"
+																					: "text-xs ml-1"
+																			}
+																		>
+																			{category.quantity}
+																		</p>
 																	</div>
 																))}
 															</div>

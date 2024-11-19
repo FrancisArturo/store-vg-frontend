@@ -175,10 +175,6 @@ export const ProductPage = () => {
 		setIndexSlide(indexSlide + 1);
 	};
 
-	// const isItemSelectedSlider = (index: number) => {
-	// 	return indexSlide === index;
-	// };
-
 	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		if (productsFound.length > 0) {

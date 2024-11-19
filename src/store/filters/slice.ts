@@ -6,8 +6,6 @@ const initialState = {
 	brand: "",
 };
 
-// type Name = 'minPrice' | 'brand'
-
 export const filterSlice = createSlice({
 	name: "filters",
 	initialState,

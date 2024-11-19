@@ -158,7 +158,7 @@ export const Cart: React.FC = () => {
 																<div className="flex">
 																	<button
 																		type="button"
-																		className="font-medium text-indigo-600 hover:text-indigo-500"
+																		className="font-medium text-gray-500 hover:text-gray-700"
 																		onClick={() =>
 																			deleteCartProduct(product.id)
 																		}
@@ -194,7 +194,7 @@ export const Cart: React.FC = () => {
 										) : (
 											<a
 												href="/checkout"
-												className="flex items-center justify-center rounded-md border border-transparent bg-black px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+												className="flex items-center justify-center rounded-md border border-transparent bg-black px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-700 duration-500"
 											>
 												Checkout
 											</a>
@@ -206,7 +206,7 @@ export const Cart: React.FC = () => {
 											<button
 												type="button"
 												onClick={() => setIsOpenCart(false)}
-												className="font-medium text-indigo-600 hover:text-indigo-500"
+												className="font-medium text-gray-600 hover:text-gray-500"
 											>
 												Continue Shopping
 												<span aria-hidden="true"> &rarr;</span>
