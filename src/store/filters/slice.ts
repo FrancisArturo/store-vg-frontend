@@ -2,6 +2,7 @@ import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 const initialState = {
 	minPrice: 0,
+	maxPrice: 0,
 	brand: "",
 };
 
@@ -14,10 +15,14 @@ export const filterSlice = createSlice({
 		setMinPriceFilter: (state, action: PayloadAction<number>) => {
 			state.minPrice = action.payload;
 		},
+		setMaxPriceFilter: (state, action: PayloadAction<number>) => {
+			state.maxPrice = action.payload;
+		},
 		setBrandFilter: (state, action: PayloadAction<string>) => {
 			state.brand = action.payload;
 		},
 	},
 });
 
-export const { setMinPriceFilter, setBrandFilter } = filterSlice.actions;
+export const { setMinPriceFilter, setMaxPriceFilter, setBrandFilter } =
+	filterSlice.actions;

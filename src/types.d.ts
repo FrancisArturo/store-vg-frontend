@@ -87,6 +87,7 @@ export interface CartStoreState {
 
 export interface FiltersStoreState {
 	minPrice: number;
+	maxPrice: number;
 	brand: string;
 }
 
