@@ -3,13 +3,14 @@
 		"id": 121,
 		"title": "iPhone 5s",
 		"description": "The iPhone 5s is a classic smartphone known for its compact design and advanced features during its release. While it's an older model, it still provides a reliable user experience.",
-		"category": "smartphones",
+		"category": "Smartphones",
 		"price": 199.99,
 		"discountPercentage": 11.85,
 		"rating": 3.92,
 		"stock": 65,
 		"tags": ["smartphones", "apple"],
 		"brand": "Apple",
+		"logo": "https://i.imgur.com/ZEUlmq4.png",
 		"sku": "AZ1L68SM",
 		"weight": 4,
 		"dimensions": {
@@ -20,6 +21,7 @@
 		"warrantyInformation": "1 week warranty",
 		"shippingInformation": "Ships in 1 week",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 25,
 		"reviews": [
 			{
 				"rating": 4,
@@ -56,19 +58,21 @@
 			"https://cdn.dummyjson.com/products/images/smartphones/iPhone%205s/2.png",
 			"https://cdn.dummyjson.com/products/images/smartphones/iPhone%205s/3.png"
 		],
-		"thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/iPhone%205s/thumbnail.png"
+		"imagesSlider": [],
+		"thumbnail": "https://i.imgur.com/vqLx8s7.png"
 	},
 	{
 		"id": 122,
 		"title": "iPhone 6",
 		"description": "The iPhone 6 is a stylish and capable smartphone with a larger display and improved performance. It introduced new features and design elements, making it a popular choice in its time.",
-		"category": "smartphones",
+		"category": "Smartphones",
 		"price": 299.99,
 		"discountPercentage": 4.54,
 		"rating": 3.76,
 		"stock": 99,
 		"tags": ["smartphones", "apple"],
 		"brand": "Apple",
+		"logo": "https://i.imgur.com/ZEUlmq4.png",
 		"sku": "ZPXH3X9J",
 		"weight": 8,
 		"dimensions": {
@@ -79,6 +83,7 @@
 		"warrantyInformation": "3 year warranty",
 		"shippingInformation": "Ships overnight",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 15,
 		"reviews": [
 			{
 				"rating": 5,
@@ -111,23 +116,24 @@
 			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
 		},
 		"images": [
-			"https://cdn.dummyjson.com/products/images/smartphones/iPhone%206/1.png",
-			"https://cdn.dummyjson.com/products/images/smartphones/iPhone%206/2.png",
-			"https://cdn.dummyjson.com/products/images/smartphones/iPhone%206/3.png"
+			"https://i.imgur.com/wpqm1kO.png",
+			"https://i.imgur.com/g0ckHgs.png"
 		],
-		"thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/iPhone%206/thumbnail.png"
+		"imagesSlider": [],
+		"thumbnail": "https://i.imgur.com/0peUF3L.png"
 	},
 	{
 		"id": 123,
 		"title": "iPhone 13 Pro",
 		"description": "The iPhone 13 Pro is a cutting-edge smartphone with a powerful camera system, high-performance chip, and stunning display. It offers advanced features for users who demand top-notch technology.",
-		"category": "smartphones",
+		"category": "Smartphones",
 		"price": 1099.99,
 		"discountPercentage": 18.3,
 		"rating": 3.42,
 		"stock": 26,
 		"tags": ["smartphones", "apple"],
 		"brand": "Apple",
+		"logo": "https://i.imgur.com/ZEUlmq4.png",
 		"sku": "YGQKHPGK",
 		"weight": 8,
 		"dimensions": {
@@ -138,6 +144,7 @@
 		"warrantyInformation": "1 year warranty",
 		"shippingInformation": "Ships in 2 weeks",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 12,
 		"reviews": [
 			{
 				"rating": 5,
@@ -170,23 +177,24 @@
 			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
 		},
 		"images": [
-			"https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/1.png",
-			"https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/2.png",
-			"https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/3.png"
+			"https://i.imgur.com/5glGx5N.png",
+			"https://i.imgur.com/6A2s6Eh.png"
 		],
-		"thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/thumbnail.png"
+		"imagesSlider": [],
+		"thumbnail": "https://i.imgur.com/5CtcQE8.png"
 	},
 	{
 		"id": 124,
 		"title": "iPhone X",
 		"description": "The iPhone X is a flagship smartphone featuring a bezel-less OLED display, facial recognition technology (Face ID), and impressive performance. It represents a milestone in iPhone design and innovation.",
-		"category": "smartphones",
+		"category": "Smartphones",
 		"price": 899.99,
 		"discountPercentage": 14.19,
 		"rating": 4.96,
 		"stock": 99,
 		"tags": ["smartphones", "apple"],
 		"brand": "Apple",
+		"logo": "https://i.imgur.com/ZEUlmq4.png",
 		"sku": "9QN3UDUD",
 		"weight": 10,
 		"dimensions": {
@@ -197,6 +205,7 @@
 		"warrantyInformation": "3 months warranty",
 		"shippingInformation": "Ships in 1 month",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 35,
 		"reviews": [
 			{
 				"rating": 1,
@@ -230,22 +239,23 @@
 		},
 		"images": [
 			"https://cdn.dummyjson.com/products/images/smartphones/iPhone%20X/1.png",
-			"https://cdn.dummyjson.com/products/images/smartphones/iPhone%20X/2.png",
 			"https://cdn.dummyjson.com/products/images/smartphones/iPhone%20X/3.png"
 		],
-		"thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/iPhone%20X/thumbnail.png"
+		"imagesSlider": [],
+		"thumbnail": "https://i.imgur.com/1R3MxEH.png"
 	},
 	{
 		"id": 125,
 		"title": "Oppo A57",
 		"description": "The Oppo A57 is a mid-range smartphone known for its sleek design and capable features. It offers a balance of performance and affordability, making it a popular choice.",
-		"category": "smartphones",
+		"category": "Smartphones",
 		"price": 249.99,
 		"discountPercentage": 12.17,
 		"rating": 3.1,
 		"stock": 76,
 		"tags": ["smartphones", "oppo"],
 		"brand": "Oppo",
+		"logo": "https://i.imgur.com/0GRBSxB.png",
 		"sku": "J1NO9ULG",
 		"weight": 3,
 		"dimensions": {
@@ -256,6 +266,7 @@
 		"warrantyInformation": "No warranty",
 		"shippingInformation": "Ships in 1 month",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 17,
 		"reviews": [
 			{
 				"rating": 2,
@@ -288,23 +299,24 @@
 			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
 		},
 		"images": [
-			"https://cdn.dummyjson.com/products/images/smartphones/Oppo%20A57/1.png",
 			"https://cdn.dummyjson.com/products/images/smartphones/Oppo%20A57/2.png",
 			"https://cdn.dummyjson.com/products/images/smartphones/Oppo%20A57/3.png"
 		],
-		"thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Oppo%20A57/thumbnail.png"
+		"imagesSlider": [],
+		"thumbnail": "https://i.imgur.com/S7o4uPK.png"
 	},
 	{
 		"id": 126,
 		"title": "Oppo F19 Pro Plus",
 		"description": "The Oppo F19 Pro Plus is a feature-rich smartphone with a focus on camera capabilities. It boasts advanced photography features and a powerful performance for a premium user experience.",
-		"category": "smartphones",
+		"category": "Smartphones",
 		"price": 399.99,
 		"discountPercentage": 15.62,
 		"rating": 2.57,
 		"stock": 92,
 		"tags": ["smartphones", "oppo"],
 		"brand": "Oppo",
+		"logo": "https://i.imgur.com/0GRBSxB.png",
 		"sku": "H2TTGWXB",
 		"weight": 2,
 		"dimensions": {
@@ -315,6 +327,7 @@
 		"warrantyInformation": "3 year warranty",
 		"shippingInformation": "Ships in 1-2 business days",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 8,
 		"reviews": [
 			{
 				"rating": 4,
@@ -347,23 +360,24 @@
 			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
 		},
 		"images": [
-			"https://cdn.dummyjson.com/products/images/smartphones/Oppo%20F19%20Pro%20Plus/1.png",
-			"https://cdn.dummyjson.com/products/images/smartphones/Oppo%20F19%20Pro%20Plus/2.png",
-			"https://cdn.dummyjson.com/products/images/smartphones/Oppo%20F19%20Pro%20Plus/3.png"
+			"https://i.imgur.com/KjDwGjx.png",
+			"https://i.imgur.com/ZSpSYPl.png"
 		],
-		"thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Oppo%20F19%20Pro%20Plus/thumbnail.png"
+		"imagesSlider": [],
+		"thumbnail": "https://i.imgur.com/xAuBDuH.png"
 	},
 	{
 		"id": 127,
 		"title": "Oppo K1",
 		"description": "The Oppo K1 series offers a range of smartphones with various features and specifications. Known for their stylish design and reliable performance, the Oppo K1 series caters to diverse user preferences.",
-		"category": "smartphones",
+		"category": "Smartphones",
 		"price": 299.99,
 		"discountPercentage": 14.58,
 		"rating": 3.39,
 		"stock": 61,
 		"tags": ["smartphones", "oppo"],
 		"brand": "Oppo",
+		"logo": "https://i.imgur.com/0GRBSxB.png",
 		"sku": "ELZ94HM3",
 		"weight": 2,
 		"dimensions": {
@@ -374,6 +388,7 @@
 		"warrantyInformation": "2 year warranty",
 		"shippingInformation": "Ships in 2 weeks",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 22,
 		"reviews": [
 			{
 				"rating": 2,
@@ -406,24 +421,24 @@
 			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
 		},
 		"images": [
-			"https://cdn.dummyjson.com/products/images/smartphones/Oppo%20K1/1.png",
-			"https://cdn.dummyjson.com/products/images/smartphones/Oppo%20K1/2.png",
-			"https://cdn.dummyjson.com/products/images/smartphones/Oppo%20K1/3.png",
-			"https://cdn.dummyjson.com/products/images/smartphones/Oppo%20K1/4.png"
+			"https://i.imgur.com/u2OYoT6.png",
+			"https://i.imgur.com/3676r2q.png"
 		],
-		"thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Oppo%20K1/thumbnail.png"
+		"imagesSlider": [],
+		"thumbnail": "https://i.imgur.com/xt1VKkV.png"
 	},
 	{
 		"id": 128,
 		"title": "Realme C35",
 		"description": "The Realme C35 is a budget-friendly smartphone with a focus on providing essential features for everyday use. It offers a reliable performance and user-friendly experience.",
-		"category": "smartphones",
+		"category": "Smartphones",
 		"price": 149.99,
 		"discountPercentage": 16.47,
 		"rating": 2.56,
 		"stock": 81,
 		"tags": ["smartphones", "realme"],
 		"brand": "Realme",
+		"logo": "https://i.imgur.com/GMDCtTE.png",
 		"sku": "25KENV7J",
 		"weight": 6,
 		"dimensions": {
@@ -434,6 +449,7 @@
 		"warrantyInformation": "Lifetime warranty",
 		"shippingInformation": "Ships in 1 week",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 13,
 		"reviews": [
 			{
 				"rating": 5,
@@ -466,23 +482,25 @@
 			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
 		},
 		"images": [
-			"https://cdn.dummyjson.com/products/images/smartphones/Realme%20C35/1.png",
-			"https://cdn.dummyjson.com/products/images/smartphones/Realme%20C35/2.png",
+			"https://i.imgur.com/roDh14s.png",
+			"https://i.imgur.com/bj2RDsE.png",
 			"https://cdn.dummyjson.com/products/images/smartphones/Realme%20C35/3.png"
 		],
-		"thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Realme%20C35/thumbnail.png"
+		"imagesSlider": [],
+		"thumbnail": "https://i.imgur.com/ASygtWi.png"
 	},
 	{
 		"id": 129,
 		"title": "Realme X",
 		"description": "The Realme X is a mid-range smartphone known for its sleek design and impressive display. It offers a good balance of performance and camera capabilities for users seeking a quality device.",
-		"category": "smartphones",
+		"category": "Smartphones",
 		"price": 299.99,
 		"discountPercentage": 2.39,
 		"rating": 4.42,
 		"stock": 87,
 		"tags": ["smartphones", "realme"],
 		"brand": "Realme",
+		"logo": "https://i.imgur.com/GMDCtTE.png",
 		"sku": "5E11C5C4",
 		"weight": 1,
 		"dimensions": {
@@ -493,6 +511,7 @@
 		"warrantyInformation": "1 month warranty",
 		"shippingInformation": "Ships in 3-5 business days",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 55,
 		"reviews": [
 			{
 				"rating": 4,
@@ -529,19 +548,21 @@
 			"https://cdn.dummyjson.com/products/images/smartphones/Realme%20X/2.png",
 			"https://cdn.dummyjson.com/products/images/smartphones/Realme%20X/3.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Realme%20X/thumbnail.png"
 	},
 	{
 		"id": 130,
 		"title": "Realme XT",
 		"description": "The Realme XT is a feature-rich smartphone with a focus on camera technology. It comes equipped with advanced camera sensors, delivering high-quality photos and videos for photography enthusiasts.",
-		"category": "smartphones",
+		"category": "Smartphones",
 		"price": 349.99,
 		"discountPercentage": 3.03,
 		"rating": 4.14,
 		"stock": 53,
 		"tags": ["smartphones", "realme"],
 		"brand": "Realme",
+		"logo": "https://i.imgur.com/GMDCtTE.png",
 		"sku": "GHDMRAP2",
 		"weight": 4,
 		"dimensions": {
@@ -552,6 +573,7 @@
 		"warrantyInformation": "1 week warranty",
 		"shippingInformation": "Ships in 1 month",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 25,
 		"reviews": [
 			{
 				"rating": 5,
@@ -585,22 +607,23 @@
 		},
 		"images": [
 			"https://cdn.dummyjson.com/products/images/smartphones/Realme%20XT/1.png",
-			"https://cdn.dummyjson.com/products/images/smartphones/Realme%20XT/2.png",
-			"https://cdn.dummyjson.com/products/images/smartphones/Realme%20XT/3.png"
+			"https://cdn.dummyjson.com/products/images/smartphones/Realme%20XT/2.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Realme%20XT/thumbnail.png"
 	},
 	{
 		"id": 131,
 		"title": "Samsung Galaxy S7",
 		"description": "The Samsung Galaxy S7 is a flagship smartphone known for its sleek design and advanced features. It features a high-resolution display, powerful camera, and robust performance.",
-		"category": "smartphones",
+		"category": "Smartphones",
 		"price": 299.99,
 		"discountPercentage": 8.83,
 		"rating": 4.9,
 		"stock": 55,
 		"tags": ["smartphones", "samsung galaxy"],
 		"brand": "Samsung",
+		"logo": "https://i.imgur.com/YIxRdhN.png",
 		"sku": "VZF4Z58Z",
 		"weight": 8,
 		"dimensions": {
@@ -611,6 +634,7 @@
 		"warrantyInformation": "1 month warranty",
 		"shippingInformation": "Ships in 2 weeks",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 18,
 		"reviews": [
 			{
 				"rating": 5,
@@ -643,23 +667,24 @@
 			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
 		},
 		"images": [
-			"https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S7/1.png",
 			"https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S7/2.png",
 			"https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S7/3.png"
 		],
-		"thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S7/thumbnail.png"
+		"imagesSlider": [],
+		"thumbnail": "https://i.imgur.com/zKF9PsZ.png"
 	},
 	{
 		"id": 132,
 		"title": "Samsung Galaxy S8",
 		"description": "The Samsung Galaxy S8 is a premium smartphone with an Infinity Display, offering a stunning visual experience. It boasts advanced camera capabilities and cutting-edge technology.",
-		"category": "smartphones",
+		"category": "Smartphones",
 		"price": 499.99,
 		"discountPercentage": 2.69,
 		"rating": 3.69,
 		"stock": 75,
 		"tags": ["smartphones", "samsung galaxy"],
 		"brand": "Samsung",
+		"logo": "https://i.imgur.com/YIxRdhN.png",
 		"sku": "GLXQQKBF",
 		"weight": 6,
 		"dimensions": {
@@ -670,6 +695,7 @@
 		"warrantyInformation": "Lifetime warranty",
 		"shippingInformation": "Ships in 3-5 business days",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 65,
 		"reviews": [
 			{
 				"rating": 2,
@@ -703,22 +729,23 @@
 		},
 		"images": [
 			"https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S8/1.png",
-			"https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S8/2.png",
 			"https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S8/3.png"
 		],
-		"thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S8/thumbnail.png"
+		"imagesSlider": [],
+		"thumbnail": "https://i.imgur.com/QyP6Stv.png"
 	},
 	{
 		"id": 133,
 		"title": "Samsung Galaxy S10",
 		"description": "The Samsung Galaxy S10 is a flagship device featuring a dynamic AMOLED display, versatile camera system, and powerful performance. It represents innovation and excellence in smartphone technology.",
-		"category": "smartphones",
+		"category": "Smartphones",
 		"price": 699.99,
 		"discountPercentage": 0.97,
 		"rating": 2.81,
 		"stock": 40,
 		"tags": ["smartphones", "samsung galaxy"],
 		"brand": "Samsung",
+		"logo": "https://i.imgur.com/YIxRdhN.png",
 		"sku": "5GJFL98I",
 		"weight": 3,
 		"dimensions": {
@@ -729,6 +756,7 @@
 		"warrantyInformation": "1 month warranty",
 		"shippingInformation": "Ships overnight",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 11,
 		"reviews": [
 			{
 				"rating": 4,
@@ -761,23 +789,24 @@
 			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
 		},
 		"images": [
-			"https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S10/1.png",
 			"https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S10/2.png",
-			"https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S10/3.png"
+			"https://i.imgur.com/NhRE8p8.png"
 		],
-		"thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Samsung%20Galaxy%20S10/thumbnail.png"
+		"imagesSlider": [],
+		"thumbnail": "https://i.imgur.com/aDmxYL0.png"
 	},
 	{
 		"id": 134,
 		"title": "Vivo S1",
 		"description": "The Vivo S1 is a stylish and mid-range smartphone offering a blend of design and performance. It features a vibrant display, capable camera system, and reliable functionality.",
-		"category": "smartphones",
+		"category": "Smartphones",
 		"price": 249.99,
 		"discountPercentage": 4.25,
 		"rating": 2.83,
 		"stock": 13,
 		"tags": ["smartphones", "vivo"],
 		"brand": "Vivo",
+		"logo": "https://i.imgur.com/Kcnblbs.png",
 		"sku": "BG6974E7",
 		"weight": 1,
 		"dimensions": {
@@ -788,6 +817,7 @@
 		"warrantyInformation": "1 week warranty",
 		"shippingInformation": "Ships overnight",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 27,
 		"reviews": [
 			{
 				"rating": 5,
@@ -820,23 +850,24 @@
 			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
 		},
 		"images": [
-			"https://cdn.dummyjson.com/products/images/smartphones/Vivo%20S1/1.png",
-			"https://cdn.dummyjson.com/products/images/smartphones/Vivo%20S1/2.png",
-			"https://cdn.dummyjson.com/products/images/smartphones/Vivo%20S1/3.png"
+			"https://i.imgur.com/ewFP9Qc.png",
+			"https://i.imgur.com/eKGxZBP.png"
 		],
-		"thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Vivo%20S1/thumbnail.png"
+		"imagesSlider": [],
+		"thumbnail": "https://i.imgur.com/jheV9kj.png"
 	},
 	{
 		"id": 135,
 		"title": "Vivo V9",
 		"description": "The Vivo V9 is a smartphone known for its sleek design and emphasis on capturing high-quality selfies. It features a notch display, dual-camera setup, and a modern design.",
-		"category": "smartphones",
+		"category": "Smartphones",
 		"price": 299.99,
 		"discountPercentage": 14.57,
 		"rating": 3.1,
 		"stock": 19,
 		"tags": ["smartphones", "vivo"],
 		"brand": "Vivo",
+		"logo": "https://i.imgur.com/Kcnblbs.png",
 		"sku": "N9WFE2WH",
 		"weight": 5,
 		"dimensions": {
@@ -847,6 +878,7 @@
 		"warrantyInformation": "1 week warranty",
 		"shippingInformation": "Ships overnight",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 33,
 		"reviews": [
 			{
 				"rating": 3,
@@ -879,23 +911,24 @@
 			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
 		},
 		"images": [
-			"https://cdn.dummyjson.com/products/images/smartphones/Vivo%20V9/1.png",
-			"https://cdn.dummyjson.com/products/images/smartphones/Vivo%20V9/2.png",
-			"https://cdn.dummyjson.com/products/images/smartphones/Vivo%20V9/3.png"
+			"https://i.imgur.com/obNW1Pf.png",
+			"https://i.imgur.com/RynvVrq.png"
 		],
-		"thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Vivo%20V9/thumbnail.png"
+		"imagesSlider": [],
+		"thumbnail": "https://i.imgur.com/G2WpetO.png"
 	},
 	{
 		"id": 136,
 		"title": "Vivo X21",
 		"description": "The Vivo X21 is a premium smartphone with a focus on cutting-edge technology. It features an in-display fingerprint sensor, a high-resolution display, and advanced camera capabilities.",
-		"category": "smartphones",
+		"category": "Smartphones",
 		"price": 499.99,
 		"discountPercentage": 7.32,
 		"rating": 2.75,
 		"stock": 0,
 		"tags": ["smartphones", "vivo"],
 		"brand": "Vivo",
+		"logo": "https://i.imgur.com/Kcnblbs.png",
 		"sku": "KSF00BOC",
 		"weight": 7,
 		"dimensions": {
@@ -906,6 +939,7 @@
 		"warrantyInformation": "1 week warranty",
 		"shippingInformation": "Ships overnight",
 		"availabilityStatus": "Out of Stock",
+		"reviewsNumber": 5,
 		"reviews": [
 			{
 				"rating": 5,
@@ -938,23 +972,24 @@
 			"qrCode": "https://assets.dummyjson.com/public/qr-code.png"
 		},
 		"images": [
-			"https://cdn.dummyjson.com/products/images/smartphones/Vivo%20X21/1.png",
-			"https://cdn.dummyjson.com/products/images/smartphones/Vivo%20X21/2.png",
-			"https://cdn.dummyjson.com/products/images/smartphones/Vivo%20X21/3.png"
+			"https://i.imgur.com/gp4m2iW.png",
+			"https://i.imgur.com/NPPpMiU.png"
 		],
-		"thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/Vivo%20X21/thumbnail.png"
+		"imagesSlider": [],
+		"thumbnail": "https://i.imgur.com/CgnjE6x.png"
 	},
 	{
 		"id": 78,
 		"title": "Apple MacBook Pro 14 Inch Space Grey",
 		"description": "The MacBook Pro 14 Inch in Space Grey is a powerful and sleek laptop, featuring Apple's M1 Pro chip for exceptional performance and a stunning Retina display.",
-		"category": "laptops",
+		"category": "Laptops",
 		"price": 1999.99,
 		"discountPercentage": 9.25,
 		"rating": 3.13,
 		"stock": 39,
 		"tags": ["laptops", "apple"],
 		"brand": "Apple",
+		"logo": "https://i.imgur.com/ZEUlmq4.png",
 		"sku": "QDKO6NRJ",
 		"weight": 4,
 		"dimensions": {
@@ -965,6 +1000,7 @@
 		"warrantyInformation": "1 month warranty",
 		"shippingInformation": "Ships in 1 week",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 78,
 		"reviews": [
 			{
 				"rating": 5,
@@ -1001,19 +1037,21 @@
 			"https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/2.png",
 			"https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/3.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/thumbnail.png"
 	},
 	{
 		"id": 79,
 		"title": "Asus Zenbook Pro Dual Screen Laptop",
 		"description": "The Asus Zenbook Pro Dual Screen Laptop is a high-performance device with dual screens, providing productivity and versatility for creative professionals.",
-		"category": "laptops",
+		"category": "Laptops",
 		"price": 1799.99,
 		"discountPercentage": 9.21,
 		"rating": 3.14,
 		"stock": 38,
 		"tags": ["laptops"],
 		"brand": "Asus",
+		"logo": "https://i.imgur.com/FHpMa98.png",
 		"sku": "4A9KFMBG",
 		"weight": 8,
 		"dimensions": {
@@ -1024,6 +1062,7 @@
 		"warrantyInformation": "No warranty",
 		"shippingInformation": "Ships in 3-5 business days",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 56,
 		"reviews": [
 			{
 				"rating": 5,
@@ -1060,19 +1099,21 @@
 			"https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/2.png",
 			"https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/3.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/laptops/Asus%20Zenbook%20Pro%20Dual%20Screen%20Laptop/thumbnail.png"
 	},
 	{
 		"id": 80,
 		"title": "Huawei Matebook X Pro",
 		"description": "The Huawei Matebook X Pro is a slim and stylish laptop with a high-resolution touchscreen display, offering a premium experience for users on the go.",
-		"category": "laptops",
+		"category": "Laptops",
 		"price": 1399.99,
 		"discountPercentage": 15.25,
 		"rating": 4.62,
 		"stock": 34,
 		"tags": ["laptops"],
 		"brand": "Huawei",
+		"logo": "https://i.imgur.com/qZ1iQIa.png",
 		"sku": "U2CBNNB0",
 		"weight": 9,
 		"dimensions": {
@@ -1083,6 +1124,7 @@
 		"warrantyInformation": "2 year warranty",
 		"shippingInformation": "Ships in 2 weeks",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 41,
 		"reviews": [
 			{
 				"rating": 4,
@@ -1119,19 +1161,21 @@
 			"https://cdn.dummyjson.com/products/images/laptops/Huawei%20Matebook%20X%20Pro/2.png",
 			"https://cdn.dummyjson.com/products/images/laptops/Huawei%20Matebook%20X%20Pro/3.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/laptops/Huawei%20Matebook%20X%20Pro/thumbnail.png"
 	},
 	{
 		"id": 81,
 		"title": "Lenovo Yoga 920",
 		"description": "The Lenovo Yoga 920 is a 2-in-1 convertible laptop with a flexible hinge, allowing you to use it as a laptop or tablet, offering versatility and portability.",
-		"category": "laptops",
+		"category": "Laptops",
 		"price": 1099.99,
 		"discountPercentage": 7.77,
 		"rating": 2.98,
 		"stock": 71,
 		"tags": ["laptops"],
 		"brand": "Lenovo",
+		"logo": "https://i.imgur.com/gT17oEm.png",
 		"sku": "MST9WZQY",
 		"weight": 7,
 		"dimensions": {
@@ -1142,6 +1186,7 @@
 		"warrantyInformation": "Lifetime warranty",
 		"shippingInformation": "Ships in 1 week",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 14,
 		"reviews": [
 			{
 				"rating": 4,
@@ -1178,19 +1223,21 @@
 			"https://cdn.dummyjson.com/products/images/laptops/Lenovo%20Yoga%20920/2.png",
 			"https://cdn.dummyjson.com/products/images/laptops/Lenovo%20Yoga%20920/3.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/laptops/Lenovo%20Yoga%20920/thumbnail.png"
 	},
 	{
 		"id": 82,
 		"title": "New DELL XPS 13 9300 Laptop",
 		"description": "The New DELL XPS 13 9300 Laptop is a compact and powerful device, featuring a virtually borderless InfinityEdge display and high-end performance for various tasks.",
-		"category": "laptops",
+		"category": "Laptops",
 		"price": 1499.99,
 		"discountPercentage": 11.7,
 		"rating": 2.98,
 		"stock": 18,
 		"tags": ["laptops"],
 		"brand": "Dell",
+		"logo": "https://i.imgur.com/rd6K2as.png",
 		"sku": "XBJJ446X",
 		"weight": 10,
 		"dimensions": {
@@ -1201,6 +1248,7 @@
 		"warrantyInformation": "Lifetime warranty",
 		"shippingInformation": "Ships overnight",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 37,
 		"reviews": [
 			{
 				"rating": 3,
@@ -1237,19 +1285,21 @@
 			"https://cdn.dummyjson.com/products/images/laptops/New%20DELL%20XPS%2013%209300%20Laptop/2.png",
 			"https://cdn.dummyjson.com/products/images/laptops/New%20DELL%20XPS%2013%209300%20Laptop/3.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/laptops/New%20DELL%20XPS%2013%209300%20Laptop/thumbnail.png"
 	},
 	{
 		"id": 99,
 		"title": "Amazon Echo Plus",
 		"description": "The Amazon Echo Plus is a smart speaker with built-in Alexa voice control. It features premium sound quality and serves as a hub for controlling smart home devices.",
-		"category": "mobile-accessories",
+		"category": "Mobile-Accessories",
 		"price": 99.99,
 		"discountPercentage": 16.3,
 		"rating": 3.52,
 		"stock": 50,
 		"tags": ["electronics", "smart speakers"],
 		"brand": "Amazon",
+		"logo": "https://i.imgur.com/h6tTByA.png",
 		"sku": "YHLK4W9V",
 		"weight": 7,
 		"dimensions": {
@@ -1260,6 +1310,7 @@
 		"warrantyInformation": "1 month warranty",
 		"shippingInformation": "Ships in 1 week",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 81,
 		"reviews": [
 			{
 				"rating": 4,
@@ -1295,6 +1346,7 @@
 			"https://cdn.dummyjson.com/products/images/mobile-accessories/Amazon%20Echo%20Plus/1.png",
 			"https://cdn.dummyjson.com/products/images/mobile-accessories/Amazon%20Echo%20Plus/2.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Amazon%20Echo%20Plus/thumbnail.png"
 	},
 	{},
@@ -1302,13 +1354,14 @@
 		"id": 101,
 		"title": "Apple AirPods Max Silver",
 		"description": "The Apple AirPods Max in Silver are premium over-ear headphones with high-fidelity audio, adaptive EQ, and active noise cancellation. Experience immersive sound in style.",
-		"category": "mobile-accessories",
+		"category": "Mobile-Accessories",
 		"price": 549.99,
 		"discountPercentage": 11.7,
 		"rating": 3.11,
 		"stock": 7,
 		"tags": ["electronics", "over-ear headphones"],
 		"brand": "Apple",
+		"logo": "https://i.imgur.com/ZEUlmq4.png",
 		"sku": "HPK82VDE",
 		"weight": 4,
 		"dimensions": {
@@ -1319,6 +1372,7 @@
 		"warrantyInformation": "3 months warranty",
 		"shippingInformation": "Ships in 1 month",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 12,
 		"reviews": [
 			{
 				"rating": 1,
@@ -1353,19 +1407,21 @@
 		"images": [
 			"https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20AirPods%20Max%20Silver/1.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20AirPods%20Max%20Silver/thumbnail.png"
 	},
 	{
 		"id": 102,
 		"title": "Apple Airpower Wireless Charger",
 		"description": "The Apple AirPower Wireless Charger provides a convenient way to charge your compatible Apple devices wirelessly. Simply place your devices on the charging mat for effortless charging.",
-		"category": "mobile-accessories",
+		"category": "Mobile-Accessories",
 		"price": 79.99,
 		"discountPercentage": 6.54,
 		"rating": 4.51,
 		"stock": 78,
 		"tags": ["electronics", "wireless chargers"],
 		"brand": "Apple",
+		"logo": "https://i.imgur.com/ZEUlmq4.png",
 		"sku": "CBIU3PMZ",
 		"weight": 3,
 		"dimensions": {
@@ -1376,6 +1432,7 @@
 		"warrantyInformation": "Lifetime warranty",
 		"shippingInformation": "Ships in 1 month",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 94,
 		"reviews": [
 			{
 				"rating": 5,
@@ -1410,19 +1467,21 @@
 		"images": [
 			"https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Airpower%20Wireless%20Charger/1.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Airpower%20Wireless%20Charger/thumbnail.png"
 	},
 	{
 		"id": 103,
 		"title": "Apple HomePod Mini Cosmic Grey",
 		"description": "The Apple HomePod Mini in Cosmic Grey is a compact smart speaker that delivers impressive audio and integrates seamlessly with the Apple ecosystem for a smart home experience.",
-		"category": "mobile-accessories",
+		"category": "Mobile-Accessories",
 		"price": 99.99,
 		"discountPercentage": 3.7,
 		"rating": 4.51,
 		"stock": 65,
 		"tags": ["electronics", "smart speakers"],
 		"brand": "Apple",
+		"logo": "https://i.imgur.com/ZEUlmq4.png",
 		"sku": "LDHQAT4B",
 		"weight": 2,
 		"dimensions": {
@@ -1433,6 +1492,7 @@
 		"warrantyInformation": "1 month warranty",
 		"shippingInformation": "Ships overnight",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 17,
 		"reviews": [
 			{
 				"rating": 3,
@@ -1467,19 +1527,21 @@
 		"images": [
 			"https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20HomePod%20Mini%20Cosmic%20Grey/1.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20HomePod%20Mini%20Cosmic%20Grey/thumbnail.png"
 	},
 	{
 		"id": 104,
 		"title": "Apple iPhone Charger",
 		"description": "The Apple iPhone Charger is a high-quality charger designed for fast and efficient charging of your iPhone. Ensure your device stays powered up and ready to go.",
-		"category": "mobile-accessories",
+		"category": "Mobile-Accessories",
 		"price": 19.99,
 		"discountPercentage": 1.01,
 		"rating": 3.03,
 		"stock": 4,
 		"tags": ["electronics", "chargers"],
 		"brand": "Apple",
+		"logo": "https://i.imgur.com/ZEUlmq4.png",
 		"sku": "YAA6EHI7",
 		"weight": 5,
 		"dimensions": {
@@ -1490,6 +1552,7 @@
 		"warrantyInformation": "2 year warranty",
 		"shippingInformation": "Ships in 1 week",
 		"availabilityStatus": "Low Stock",
+		"reviewsNumber": 63,
 		"reviews": [
 			{
 				"rating": 5,
@@ -1525,19 +1588,21 @@
 			"https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20iPhone%20Charger/1.png",
 			"https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20iPhone%20Charger/2.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20iPhone%20Charger/thumbnail.png"
 	},
 	{
 		"id": 105,
 		"title": "Apple MagSafe Battery Pack",
 		"description": "The Apple MagSafe Battery Pack is a portable and convenient way to add extra battery life to your MagSafe-compatible iPhone. Attach it magnetically for a secure connection.",
-		"category": "mobile-accessories",
+		"category": "Mobile-Accessories",
 		"price": 99.99,
 		"discountPercentage": 10.27,
 		"rating": 2.61,
 		"stock": 80,
 		"tags": ["electronics", "power banks"],
 		"brand": "Apple",
+		"logo": "https://i.imgur.com/ZEUlmq4.png",
 		"sku": "XNFJURL7",
 		"weight": 6,
 		"dimensions": {
@@ -1548,6 +1613,7 @@
 		"warrantyInformation": "3 year warranty",
 		"shippingInformation": "Ships in 3-5 business days",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 55,
 		"reviews": [
 			{
 				"rating": 5,
@@ -1583,19 +1649,21 @@
 			"https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20MagSafe%20Battery%20Pack/1.png",
 			"https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20MagSafe%20Battery%20Pack/2.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20MagSafe%20Battery%20Pack/thumbnail.png"
 	},
 	{
 		"id": 106,
 		"title": "Apple Watch Series 4 Gold",
 		"description": "The Apple Watch Series 4 in Gold is a stylish and advanced smartwatch with features like heart rate monitoring, fitness tracking, and a beautiful Retina display.",
-		"category": "mobile-accessories",
+		"category": "Mobile-Accessories",
 		"price": 349.99,
 		"discountPercentage": 5.14,
 		"rating": 4.42,
 		"stock": 68,
 		"tags": ["electronics", "smartwatches"],
 		"brand": "Apple",
+		"logo": "https://i.imgur.com/ZEUlmq4.png",
 		"sku": "ZNXPOEPT",
 		"weight": 6,
 		"dimensions": {
@@ -1606,6 +1674,7 @@
 		"warrantyInformation": "6 months warranty",
 		"shippingInformation": "Ships in 1-2 business days",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 7,
 		"reviews": [
 			{
 				"rating": 3,
@@ -1642,19 +1711,21 @@
 			"https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Watch%20Series%204%20Gold/2.png",
 			"https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Watch%20Series%204%20Gold/3.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20Watch%20Series%204%20Gold/thumbnail.png"
 	},
 	{
 		"id": 107,
 		"title": "Beats Flex Wireless Earphones",
 		"description": "The Beats Flex Wireless Earphones offer a comfortable and versatile audio experience. With magnetic earbuds and up to 12 hours of battery life, they are ideal for everyday use.",
-		"category": "mobile-accessories",
+		"category": "Mobile-Accessories",
 		"price": 49.99,
 		"discountPercentage": 8.27,
 		"rating": 4.17,
 		"stock": 49,
 		"tags": ["electronics", "wireless earphones"],
 		"brand": "Beats",
+		"logo": "https://i.imgur.com/9UEyl1d.png",
 		"sku": "7N15J2UK",
 		"weight": 6,
 		"dimensions": {
@@ -1665,6 +1736,7 @@
 		"warrantyInformation": "1 week warranty",
 		"shippingInformation": "Ships overnight",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 105,
 		"reviews": [
 			{
 				"rating": 5,
@@ -1699,19 +1771,21 @@
 		"images": [
 			"https://cdn.dummyjson.com/products/images/mobile-accessories/Beats%20Flex%20Wireless%20Earphones/1.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Beats%20Flex%20Wireless%20Earphones/thumbnail.png"
 	},
 	{
 		"id": 108,
 		"title": "iPhone 12 Silicone Case with MagSafe Plum",
 		"description": "The iPhone 12 Silicone Case with MagSafe in Plum is a stylish and protective case designed for the iPhone 12. It features MagSafe technology for easy attachment of accessories.",
-		"category": "mobile-accessories",
+		"category": "Mobile-Accessories",
 		"price": 29.99,
 		"discountPercentage": 14.35,
 		"rating": 4.41,
 		"stock": 51,
 		"tags": ["electronics", "phone accessories"],
 		"brand": "Apple",
+		"logo": "https://i.imgur.com/ZEUlmq4.png",
 		"sku": "3UHE8VLA",
 		"weight": 5,
 		"dimensions": {
@@ -1722,6 +1796,7 @@
 		"warrantyInformation": "1 year warranty",
 		"shippingInformation": "Ships in 1 month",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 42,
 		"reviews": [
 			{
 				"rating": 1,
@@ -1759,19 +1834,21 @@
 			"https://cdn.dummyjson.com/products/images/mobile-accessories/iPhone%2012%20Silicone%20Case%20with%20MagSafe%20Plum/3.png",
 			"https://cdn.dummyjson.com/products/images/mobile-accessories/iPhone%2012%20Silicone%20Case%20with%20MagSafe%20Plum/4.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/iPhone%2012%20Silicone%20Case%20with%20MagSafe%20Plum/thumbnail.png"
 	},
 	{
 		"id": 109,
 		"title": "Monopod",
 		"description": "The Monopod is a versatile camera accessory for stable and adjustable shooting. Perfect for capturing selfies, group photos, and videos with ease.",
-		"category": "mobile-accessories",
+		"category": "Mobile-Accessories",
 		"price": 19.99,
 		"discountPercentage": 11.62,
 		"rating": 2.99,
 		"stock": 96,
 		"tags": ["electronics", "camera accessories"],
 		"brand": "TechGear",
+		"logo": "https://i.imgur.com/h69rcBf.png",
 		"sku": "RDEQ0W2L",
 		"weight": 9,
 		"dimensions": {
@@ -1782,6 +1859,7 @@
 		"warrantyInformation": "1 week warranty",
 		"shippingInformation": "Ships in 1 week",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 61,
 		"reviews": [
 			{
 				"rating": 4,
@@ -1817,19 +1895,21 @@
 			"https://cdn.dummyjson.com/products/images/mobile-accessories/Monopod/1.png",
 			"https://cdn.dummyjson.com/products/images/mobile-accessories/Monopod/2.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Monopod/thumbnail.png"
 	},
 	{
 		"id": 110,
 		"title": "Selfie Lamp with iPhone",
 		"description": "The Selfie Lamp with iPhone is a portable and adjustable LED light designed to enhance your selfies and video calls. Attach it to your iPhone for well-lit photos.",
-		"category": "mobile-accessories",
+		"category": "Mobile-Accessories",
 		"price": 14.99,
 		"discountPercentage": 13.86,
 		"rating": 2.84,
 		"stock": 89,
 		"tags": ["electronics", "selfie accessories"],
 		"brand": "GadgetMaster",
+		"logo": "https://i.imgur.com/Jcb0zH5.png",
 		"sku": "2VZ1ZNMO",
 		"weight": 7,
 		"dimensions": {
@@ -1840,6 +1920,7 @@
 		"warrantyInformation": "1 week warranty",
 		"shippingInformation": "Ships in 1 week",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 19,
 		"reviews": [
 			{
 				"rating": 5,
@@ -1874,19 +1955,21 @@
 		"images": [
 			"https://cdn.dummyjson.com/products/images/mobile-accessories/Selfie%20Lamp%20with%20iPhone/1.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Selfie%20Lamp%20with%20iPhone/thumbnail.png"
 	},
 	{
 		"id": 111,
 		"title": "Selfie Stick Monopod",
 		"description": "The Selfie Stick Monopod is a extendable and foldable device for capturing the perfect selfie or group photo. Compatible with smartphones and cameras.",
-		"category": "mobile-accessories",
+		"category": "Mobile-Accessories",
 		"price": 12.99,
 		"discountPercentage": 15.29,
 		"rating": 2.93,
 		"stock": 33,
 		"tags": ["electronics", "selfie accessories"],
-		"brand": "SnapTech",
+		"brand": "TechGear",
+		"logo": "https://i.imgur.com/h69rcBf.png",
 		"sku": "9T6WSF1E",
 		"weight": 7,
 		"dimensions": {
@@ -1897,6 +1980,7 @@
 		"warrantyInformation": "3 year warranty",
 		"shippingInformation": "Ships overnight",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 22,
 		"reviews": [
 			{
 				"rating": 5,
@@ -1931,19 +2015,21 @@
 		"images": [
 			"https://cdn.dummyjson.com/products/images/mobile-accessories/Selfie%20Stick%20Monopod/1.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/Selfie%20Stick%20Monopod/thumbnail.png"
 	},
 	{
 		"id": 112,
 		"title": "TV Studio Camera Pedestal",
 		"description": "The TV Studio Camera Pedestal is a professional-grade camera support system for smooth and precise camera movements in a studio setting. Ideal for broadcast and production.",
-		"category": "mobile-accessories",
+		"category": "Mobile-Accessories",
 		"price": 499.99,
 		"discountPercentage": 10.28,
 		"rating": 4.05,
 		"stock": 45,
 		"tags": ["electronics", "camera accessories"],
-		"brand": "ProVision",
+		"brand": "GadgetMaster",
+		"logo": "https://i.imgur.com/Jcb0zH5.png",
 		"sku": "8K18CNAH",
 		"weight": 7,
 		"dimensions": {
@@ -1954,6 +2040,7 @@
 		"warrantyInformation": "6 months warranty",
 		"shippingInformation": "Ships overnight",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 35,
 		"reviews": [
 			{
 				"rating": 5,
@@ -1988,19 +2075,21 @@
 		"images": [
 			"https://cdn.dummyjson.com/products/images/mobile-accessories/TV%20Studio%20Camera%20Pedestal/1.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/mobile-accessories/TV%20Studio%20Camera%20Pedestal/thumbnail.png"
 	},
 	{
 		"id": 159,
 		"title": "iPad Mini 2021 Starlight",
 		"description": "The iPad Mini 2021 in Starlight is a compact and powerful tablet from Apple. Featuring a stunning Retina display, powerful A-series chip, and a sleek design, it offers a premium tablet experience.",
-		"category": "tablets",
+		"category": "Tablets",
 		"price": 499.99,
 		"discountPercentage": 19.48,
 		"rating": 3.87,
 		"stock": 32,
 		"tags": ["electronics", "tablets"],
 		"brand": "Apple",
+		"logo": "https://i.imgur.com/ZEUlmq4.png",
 		"sku": "L5CSWLNS",
 		"weight": 3,
 		"dimensions": {
@@ -2011,6 +2100,7 @@
 		"warrantyInformation": "3 months warranty",
 		"shippingInformation": "Ships in 2 weeks",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 29,
 		"reviews": [
 			{
 				"rating": 2,
@@ -2048,19 +2138,21 @@
 			"https://cdn.dummyjson.com/products/images/tablets/iPad%20Mini%202021%20Starlight/3.png",
 			"https://cdn.dummyjson.com/products/images/tablets/iPad%20Mini%202021%20Starlight/4.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/tablets/iPad%20Mini%202021%20Starlight/thumbnail.png"
 	},
 	{
 		"id": 160,
 		"title": "Samsung Galaxy Tab S8 Plus Grey",
 		"description": "The Samsung Galaxy Tab S8 Plus in Grey is a high-performance Android tablet by Samsung. With a large AMOLED display, powerful processor, and S Pen support, it's ideal for productivity and entertainment.",
-		"category": "tablets",
+		"category": "Tablets",
 		"price": 599.99,
 		"discountPercentage": 8.11,
 		"rating": 3.43,
 		"stock": 76,
 		"tags": ["electronics", "tablets"],
 		"brand": "Samsung",
+		"logo": "https://i.imgur.com/YIxRdhN.png",
 		"sku": "1SIVLPFN",
 		"weight": 10,
 		"dimensions": {
@@ -2071,6 +2163,7 @@
 		"warrantyInformation": "6 months warranty",
 		"shippingInformation": "Ships in 1-2 business days",
 		"availabilityStatus": "In Stock",
+		"reviewsNumber": 39,
 		"reviews": [
 			{
 				"rating": 2,
@@ -2108,19 +2201,21 @@
 			"https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20S8%20Plus%20Grey/3.png",
 			"https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20S8%20Plus%20Grey/4.png"
 		],
+		"imagesSlider": [],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20S8%20Plus%20Grey/thumbnail.png"
 	},
 	{
 		"id": 161,
 		"title": "Samsung Galaxy Tab White",
 		"description": "The Samsung Galaxy Tab in White is a sleek and versatile Android tablet. With a vibrant display, long-lasting battery, and a range of features, it offers a great user experience for various tasks.",
-		"category": "tablets",
+		"category": "Tablets",
 		"price": 349.99,
 		"discountPercentage": 4.82,
 		"rating": 3.7,
 		"stock": 0,
 		"tags": ["electronics", "tablets"],
 		"brand": "Samsung",
+		"logo": "https://i.imgur.com/YIxRdhN.png",
 		"sku": "AKJPAPFO",
 		"weight": 8,
 		"dimensions": {
@@ -2131,6 +2226,7 @@
 		"warrantyInformation": "3 months warranty",
 		"shippingInformation": "Ships in 1-2 business days",
 		"availabilityStatus": "Out of Stock",
+		"reviewsNumber": 89,
 		"reviews": [
 			{
 				"rating": 2,
@@ -2167,6 +2263,12 @@
 			"https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20White/2.png",
 			"https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20White/3.png",
 			"https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20White/4.png"
+		],
+		"imagesSlider": [
+			"https://i.imgur.com/SvMXBce.png",
+			"https://i.imgur.com/pa3VCDr.png",
+			"https://i.imgur.com/o8jkrco.png",
+			"https://i.imgur.com/Z4HkyZ0.png"
 		],
 		"thumbnail": "https://cdn.dummyjson.com/products/images/tablets/Samsung%20Galaxy%20Tab%20White/thumbnail.png"
 	}

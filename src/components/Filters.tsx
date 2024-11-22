@@ -99,14 +99,14 @@ export const Filters: React.FC<Props> = ({ products, category, isLoading }) => {
 								</p>
 								<input
 									type="text"
-									className="w-20 text-center"
+									className="w-20 text-center bg-gray-300"
 									placeholder="$ Min"
 									name="minPrice"
 								/>
 								<BiMinus className="text-2xl" />
 								<input
 									type="text"
-									className="w-20 text-center"
+									className="w-20 text-center bg-gray-300"
 									placeholder="$ Max"
 									name="maxPrice"
 								/>

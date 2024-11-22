@@ -28,7 +28,7 @@ export const ProductsList: React.FC = () => {
 	return (
 		<>
 			{category && category.title !== "All Products" && (
-				<nav aria-label="Breadcrumb">
+				<nav aria-label="Breadcrumb" className="mt-6">
 					<ol className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
 						<li>
 							<div className="flex items-center">
@@ -61,13 +61,19 @@ export const ProductsList: React.FC = () => {
 					</ol>
 				</nav>
 			)}
-
-			<Filters
+			{!isLoading && filteredProducts.length !== 0 && (
+				<Filters
+					products={filteredProducts}
+					category={category}
+					isLoading={isLoading}
+				/>
+			)}
+			{/* <Filters
 				products={filteredProducts}
 				category={category}
 				isLoading={isLoading}
-			/>
-			{!category && !isLoading && <p>Category not found</p>}
+			/> */}
+			{!isLoading && filteredProducts.length === 0 && <p>Products not found</p>}
 			{category && (
 				<div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
 					<div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">

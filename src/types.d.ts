@@ -9,17 +9,20 @@ export interface Product {
 	stock: number;
 	tags: string[];
 	brand: string;
+	logo: string;
 	sku: string;
 	weight: number;
 	dimensions: Dimensions;
 	warrantyInformation: string;
 	shippingInformation: string;
 	availabilityStatus: string;
+	reviewsNumber: number;
 	reviews: Review[];
 	returnPolicy: string;
 	minimumOrderQuantity: number;
 	meta: Meta;
 	images: string[];
+	imagesSlider: string[];
 	thumbnail: string;
 }
 

@@ -291,11 +291,11 @@ export const NavBar: React.FC = () => {
 							<a href="#" className="-m-2 flex items-center p-2">
 								<img
 									alt=""
-									src="https://tailwindui.com/plus/img/flags/flag-canada.svg"
+									src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
 									className="block h-auto w-5 shrink-0"
 								/>
 								<span className="ml-3 block text-base font-medium text-gray-900">
-									CAD
+									USD
 								</span>
 								<span className="sr-only">, change currency</span>
 							</a>
@@ -448,10 +448,10 @@ export const NavBar: React.FC = () => {
 									>
 										<img
 											alt=""
-											src="https://tailwindui.com/plus/img/flags/flag-canada.svg"
+											src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
 											className="block h-auto w-5 shrink-0"
 										/>
-										<span className="ml-3 block text-sm font-medium">CAD</span>
+										<span className="ml-3 block text-sm font-medium">USD</span>
 										<span className="sr-only">, change currency</span>
 									</a>
 								</div>

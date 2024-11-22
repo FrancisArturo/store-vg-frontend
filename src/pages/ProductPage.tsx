@@ -236,9 +236,16 @@ export const ProductPage = () => {
 							{/* Options */}
 							<div className="mt-4 lg:row-span-3 lg:mt-0 order-last">
 								<h2 className="sr-only">Product information</h2>
-								<p className="text-3xl tracking-tight text-gray-900">
-									${productFound?.price}
-								</p>
+								<div className="flex justify-between items-center">
+									<p className="text-3xl tracking-tight text-gray-900">
+										$ {productFound?.price}
+									</p>
+									<img
+										src={productFound.logo}
+										alt=""
+										className="max-w-[85px] max-h-[40px] "
+									/>
+								</div>
 
 								{/* Reviews */}
 								<div className="mt-6">
@@ -265,7 +272,7 @@ export const ProductPage = () => {
 											href={reviews.href}
 											className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500"
 										>
-											{reviews.totalCount} reviews
+											{productFound.reviewsNumber} reviews
 										</a>
 									</div>
 								</div>
@@ -317,7 +324,7 @@ export const ProductPage = () => {
 									) : (
 										<button
 											type="submit"
-											className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-gray-500  px-8 py-3 text-base font-medium text-white hover:bg-black hover:text-white  focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 duration-500"
+											className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-black  px-8 py-3 text-base font-medium text-white hover:bg-gray-500 hover:text-white  focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 duration-500"
 											onClick={() => addProductToCart(productFound)}
 										>
 											Add to Cart
@@ -327,7 +334,7 @@ export const ProductPage = () => {
 							</div>
 
 							<div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6 ">
-								<div className="md:max-w-[600px] md:h-[600px] w-full m-auto pb-16 px-4 relative group max-w-[400px] h-[400px]">
+								<div className="md:max-w-[600px] md:h-[650px] w-full m-auto pb-16 px-4 relative group max-w-[400px] h-[400px]">
 									<div
 										style={{
 											backgroundImage: `url(${productFound?.images[indexSlide]})`,
@@ -336,21 +343,21 @@ export const ProductPage = () => {
 									/>
 									{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 									<div
-										className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-gray-400 text-white cursor-pointer hover:bg-black duration-300"
+										className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-gray-400 text-white cursor-pointer hover:bg-black duration-200"
 										onClick={() => prevSlide()}
 									>
 										<BsChevronCompactLeft />
 									</div>
 									{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
 									<div
-										className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-gray-400 text-white cursor-pointer hover:bg-black duration-300 "
+										className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-gray-400 text-white cursor-pointer hover:bg-black duration-200"
 										onClick={() => nextSlide()}
 									>
 										<BsChevronCompactRight />
 									</div>
 								</div>
 								<div className="flex w-[100%] h-auto flex-wrap mt-2 gap-x-2 gap-y-2">
-									{productFound?.images.map((image, index) => (
+									{productFound?.imagesSlider.map((image, index) => (
 										<div
 											className="h-[115px] relative w-[20%] max-w-[84px] max-h-[84px] ml-0 mr-5 mb-8 mt-0 cursor-pointer "
 											// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>

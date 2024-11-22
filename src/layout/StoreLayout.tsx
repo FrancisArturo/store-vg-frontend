@@ -21,7 +21,7 @@ export const StoreLayout = () => {
 				<NavBar />
 				<Cart />
 			</header>
-			<main className="bg-[#f3f4f6] pt-6">
+			<main>
 				<Outlet />
 			</main>
 		</>
