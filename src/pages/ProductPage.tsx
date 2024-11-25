@@ -333,33 +333,11 @@ export const ProductPage = () => {
 								</form>
 							</div>
 
-							<div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6 ">
-								<div className="md:max-w-[600px] md:h-[650px] w-full m-auto pb-16 px-4 relative group max-w-[400px] h-[400px]">
-									<div
-										style={{
-											backgroundImage: `url(${productFound?.images[indexSlide]})`,
-										}}
-										className="w-full h-full rounded-2xl bg-center bg-cover duration-500 bg-gray-200"
-									/>
-									{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-									<div
-										className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-gray-400 text-white cursor-pointer hover:bg-black duration-200"
-										onClick={() => prevSlide()}
-									>
-										<BsChevronCompactLeft />
-									</div>
-									{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-									<div
-										className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-gray-400 text-white cursor-pointer hover:bg-black duration-200"
-										onClick={() => nextSlide()}
-									>
-										<BsChevronCompactRight />
-									</div>
-								</div>
-								<div className="flex w-[100%] h-auto flex-wrap mt-2 gap-x-2 gap-y-2">
-									{productFound?.imagesSlider.map((image, index) => (
+							<div className="flex flex-col-reverse lg:flex-row gap-x-10 gap-y-4 p-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pt-6 ">
+								<div className="flex flex-wrap mt-2 gap-x-2 gap-y-2 lg:flex-col">
+									{productFound?.images.map((image, index) => (
 										<div
-											className="h-[115px] relative w-[20%] max-w-[84px] max-h-[84px] ml-0 mr-5 mb-8 mt-0 cursor-pointer "
+											className="h-[115px] relative w-[100%] sm:max-w-[84px] sm:max-h-[84px] max-w-[45px] max-h-[45px] ml-0 md:mr-5 mr-2 mb-8 mt-0 cursor-pointer "
 											// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 											key={index}
 										>
@@ -377,6 +355,77 @@ export const ProductPage = () => {
 										</div>
 									))}
 								</div>
+								<div className="overflow-hidden bg-gray-200 relative items-center lg:max-w-[500px] lg:h-[500px]">
+									<div
+										className="flex transition-transform ease-out duration-500"
+										style={{ transform: `translateX(-${indexSlide * 100}%)` }}
+									>
+										{productFound.images.map((image) => (
+											<img
+												src={image}
+												alt={image}
+												key={image}
+												className="w-[100%] h-[100%]"
+											/>
+										))}
+									</div>
+
+									<div className="absolute inset-0 flex items-center justify-between p-4 ">
+										<button
+											type="button"
+											className="text-2xl rounded-full bg-gray-400 text-white cursor-pointer hover:bg-black duration-200 p-2"
+											onClick={() => prevSlide()}
+										>
+											<BsChevronCompactLeft />
+										</button>
+										<button
+											type="button"
+											className="text-2xl rounded-full bg-gray-400 text-white cursor-pointer hover:bg-black duration-200 p-2"
+											onClick={() => nextSlide()}
+										>
+											<BsChevronCompactRight />
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div className=" flex flex-col px-4 pb-16 pt-10 mx-auto gap-y-14 max-w-2xl lg:pb-24 lg:px-8 lg:max-w-7xl">
+							<div className="text-2xl">
+								<p>Recent Reviews</p>
+							</div>
+							<div className="flex flex-col gap-y-16  w-[100%] h-[100%]">
+								{productFound.reviews.map((review) => (
+									<div
+										key={review.reviewerEmail}
+										className="flex justify-between border-solid border-b-2 border-gray-100 lg:flex-row flex-col gap-y-5"
+									>
+										<div className="flex gap-x-80 gap-y-5 flex-col xl:flex-row">
+											<div className="flex">
+												{[0, 1, 2, 3, 4].map((rating) => (
+													<StarIcon
+														key={rating}
+														aria-hidden="true"
+														className={classNames(
+															productFound.rating > rating
+																? "text-gray-900"
+																: "text-gray-200",
+															"h-5 w-5 shrink-0",
+														)}
+													/>
+												))}
+											</div>
+											<div>
+												<p>{review.comment}</p>
+											</div>
+										</div>
+										<div className="flex gap-x-4 gap-y-4 lg:flex-col">
+											<div>{review.reviewerName}</div>
+											<div className="border-l-2 border-gray-100 pl-4 lg:border-none lg:p-0">
+												{JSON.stringify(review.date)}
+											</div>
+										</div>
+									</div>
+								))}
 							</div>
 						</div>
 					</div>
