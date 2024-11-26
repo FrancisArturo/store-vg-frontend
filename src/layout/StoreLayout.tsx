@@ -1,6 +1,3 @@
-// import { useEffect } from "react";
-// import { useProductsActions } from "../hooks/useProductsActions";
-// import { Cart } from "../components/Cart";
 import { Outlet } from "react-router-dom";
 import { useProductsActions } from "../hooks/useProductsActions";
 import { useEffect } from "react";
@@ -8,12 +5,13 @@ import { NavBar } from "../components/NavBar";
 import { Cart } from "../components/Cart";
 
 export const StoreLayout = () => {
-	const { getAllProducts, getAllCategories } = useProductsActions();
+	const { getAllCategories } = useProductsActions();
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
-		getAllProducts();
 		getAllCategories();
-	}, [getAllProducts, getAllCategories]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	return (
 		<>

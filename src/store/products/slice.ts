@@ -5,6 +5,7 @@ const initialState: ProductsStoreState = {
 	products: [],
 	categories: [],
 	isLoading: false,
+	currentPage: 1,
 };
 
 export const productsSlice = createSlice({
@@ -12,7 +13,7 @@ export const productsSlice = createSlice({
 	initialState,
 	reducers: {
 		setProducts: (state, action: PayloadAction<Product[]>) => {
-			state.products.push(...action.payload);
+			state.products = [...state.products, ...action.payload];
 		},
 		setCategories: (state, action: PayloadAction<CategoryFound[]>) => {
 			state.categories.push(...action.payload);
@@ -20,8 +21,11 @@ export const productsSlice = createSlice({
 		setIsLoading: (state, action: PayloadAction<boolean>) => {
 			state.isLoading = action.payload;
 		},
+		setCurrentPage: (state, action: PayloadAction<number>) => {
+			state.currentPage = action.payload;
+		},
 	},
 });
 
-export const { setProducts, setCategories, setIsLoading } =
+export const { setProducts, setCategories, setIsLoading, setCurrentPage } =
 	productsSlice.actions;

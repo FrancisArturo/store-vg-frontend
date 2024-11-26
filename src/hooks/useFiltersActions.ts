@@ -1,5 +1,6 @@
 import {
 	setBrandFilter,
+	setCategory,
 	setMaxPriceFilter,
 	setMinPriceFilter,
 } from "../store/filters/slice";
@@ -15,6 +16,10 @@ export const useFiltersActions = () => {
 		dispatch(setMaxPriceFilter(filter));
 	};
 
+	const addCategoryFilter = (filter: string) => {
+		dispatch(setCategory(filter));
+	};
+
 	const addBrandFilter = (filter: string) => {
 		dispatch(setBrandFilter(filter));
 	};
@@ -22,6 +27,7 @@ export const useFiltersActions = () => {
 	return {
 		addMinPriceFilter,
 		addMaxPriceFilter,
+		addCategoryFilter,
 		addBrandFilter,
 	};
 };

@@ -3,6 +3,7 @@ export interface Product {
 	title: string;
 	description: string;
 	category: string;
+	categorySlug: string;
 	price: number;
 	discountPercentage: number;
 	rating: number;
@@ -47,11 +48,22 @@ export interface Review {
 	reviewerEmail: string;
 }
 
-export type ApiGetProductsRes = {
-	products: Product[];
-	total: number;
-	skip: number;
+export type ProductsRes = {
+	docs: Product[];
+	hasNextpage: boolean;
+	hasPrevPage: boolean;
 	limit: number;
+	nextPage: number;
+	page: number;
+	pagingCounter: number;
+	prevPage: number;
+	totalDocs: number;
+	totalPages: 4;
+};
+
+export type ApiGetProductsRes = {
+	ok: boolean;
+	products: ProductsRes;
 };
 
 export type CategoryFound = {
@@ -81,6 +93,7 @@ export interface ProductsStoreState {
 	products: Product[];
 	categories: CategoryFound[];
 	isLoading: boolean;
+	currentPage: number;
 }
 export interface CartStoreState {
 	cartProducts: ProductInCart[];
