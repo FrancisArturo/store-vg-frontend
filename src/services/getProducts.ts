@@ -10,7 +10,6 @@ export const getProducts = async (
 		const res = await fetch(`${API_URL}?page=${page}&cat=${category}`);
 		if (!res.ok) throw new Error("fetching data error");
 		const data = (await res.json()) as ApiGetProductsRes;
-		console.log(data);
 		return [undefined, data.products.docs];
 	} catch (error) {
 		if (error instanceof Error) return [error];

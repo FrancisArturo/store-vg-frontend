@@ -17,6 +17,8 @@ export const ProductsList: React.FC = () => {
 
 	const { cat } = useParams();
 
+	// console.log(categories);
+
 	const categorySelected = cat
 		? categories.find((item) => item.title.toLowerCase() === cat)
 		: { title: "All Products", quantity: products.length };
@@ -76,6 +78,7 @@ export const ProductsList: React.FC = () => {
 			{!isLoading && filteredProducts.length !== 0 && (
 				<Filters
 					products={filteredProducts}
+					quantity={filteredProducts.length}
 					category={categorySelected}
 					isLoading={isLoading}
 				/>

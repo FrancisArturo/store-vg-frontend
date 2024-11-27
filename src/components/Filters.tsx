@@ -8,11 +8,17 @@ import { BiMinus, BiSolidSend, BiSolidXCircle } from "react-icons/bi";
 
 interface Props {
 	products: Product[];
+	quantity: number;
 	category?: CategoryFound;
 	isLoading: boolean;
 }
 
-export const Filters: React.FC<Props> = ({ products, category, isLoading }) => {
+export const Filters: React.FC<Props> = ({
+	products,
+	category,
+	isLoading,
+	quantity,
+}) => {
 	// const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
 	const filters = useAppSelector((store) => store.filters);
@@ -39,7 +45,7 @@ export const Filters: React.FC<Props> = ({ products, category, isLoading }) => {
 								<h1 className="text-4xl font-bold tracking-tight text-gray-900">
 									{category.title}
 								</h1>
-								<p className="font-medium ml-2">{category.quantity}</p>
+								<p className="font-medium ml-2">{quantity}</p>
 							</div>
 						)}
 

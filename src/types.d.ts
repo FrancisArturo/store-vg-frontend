@@ -58,12 +58,17 @@ export type ProductsRes = {
 	pagingCounter: number;
 	prevPage: number;
 	totalDocs: number;
-	totalPages: 4;
+	totalPages: number;
 };
 
 export type ApiGetProductsRes = {
 	ok: boolean;
 	products: ProductsRes;
+};
+
+export type ApiGetProductRes = {
+	ok: boolean;
+	product: Product;
 };
 
 export type CategoryFound = {

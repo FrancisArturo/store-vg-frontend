@@ -84,11 +84,12 @@ import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 
 import { StarIcon } from "@heroicons/react/20/solid";
 import { Radio, RadioGroup } from "@headlessui/react";
-import { useAppSelector } from "../hooks/store";
+// import { useAppSelector } from "../hooks/store";
 import { useParams } from "react-router-dom";
 import { useCheckCartProduct } from "../hooks/useCheckCartProduct";
 import type { Product } from "../types";
 import { useCartActions } from "../hooks/useCartActions";
+import { getProduct } from "../services/getProduct";
 
 const product = {
 	name: "Basic Tee 6-Pack",
@@ -151,18 +152,22 @@ function classNames(...classes) {
 export const ProductPage = () => {
 	const [selectedColor, setSelectedColor] = useState(product.colors[0]);
 	const [productFound, setProductFound] = useState<Product>();
+	const [error, setError] = useState<Error>();
 	const [indexSlide, setIndexSlide] = useState(0);
 
 	const { pid } = useParams();
-	const { products: productsFound } = useAppSelector((state) => state.products);
+	// const { products: productsFound } = useAppSelector((state) => state.products);
 	const { addProductToCart } = useCartActions();
 
 	const { isProductInCart } = useCheckCartProduct();
 
-	const getProduct = () => {
-		console.log("llamada getProduct");
-		return productsFound.find((product) => product.sku === pid);
+	const getProductSelected = async () => {
+		const [error, product] = await getProduct(pid as string);
+		if (product) setProductFound(product);
+		if (error) setError(error);
 	};
+
+	// const productFound = pid && getProduct(pid);
 
 	const prevSlide = () => {
 		if (indexSlide === 0) return;
@@ -177,13 +182,19 @@ export const ProductPage = () => {
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
-		if (productsFound.length > 0) {
-			const product = getProduct();
-			if (product) return setProductFound(product);
-			// return setError("Product not found");
-		}
+		getProductSelected();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [pid, productsFound]);
+	}, []);
+
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+	// useEffect(() => {
+	// 	if (productsFound.length > 0) {
+	// 		const product = getProduct();
+	// 		if (product) return setProductFound(product);
+	// 		// return setError("Product not found");
+	// 	}
+	// 	// eslint-disable-next-line react-hooks/exhaustive-deps
+	// }, [pid, productsFound]);
 
 	return (
 		<>

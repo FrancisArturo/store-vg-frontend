@@ -23,7 +23,7 @@ export const useProductsActions = () => {
 	};
 
 	const getAllCategories = async () => {
-		console.log("llamaada getAllCategories");
+		console.log("llamada getAllCategories");
 		const [err, categories] = await getCategories();
 		if (err) return console.error(err);
 		if (categories) {
