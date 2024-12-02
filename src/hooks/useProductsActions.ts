@@ -1,9 +1,11 @@
 import { getProducts } from "../services/getProducts";
 import {
 	setCategories,
-	setCurrentPage,
+	setHasNextPage,
 	setIsLoading,
 	setProducts,
+	setProductsScroll,
+	setTotalProducts,
 } from "../store/products/slice";
 import { useAppDispatch } from "./store";
 import { getCategories } from "../services/getCategories";
@@ -11,15 +13,32 @@ import { getCategories } from "../services/getCategories";
 export const useProductsActions = () => {
 	const dispatch = useAppDispatch();
 
-	const getAllProducts = async (page: number, category?: string) => {
+	const getAllProducts = async (
+		page: number,
+		category?: string,
+		brand?: string,
+		minPrice?: number,
+		maxPrice?: number,
+	) => {
 		console.log("llamada getAllProducts");
 		dispatch(setIsLoading(true));
-		const [err, products] = await getProducts(page, category);
+		const [err, products, hasNextPage, totalProducts] = await getProducts(
+			page,
+			category,
+			brand,
+			minPrice,
+			maxPrice,
+		);
 		dispatch(setIsLoading(false));
 		if (err) return console.error(err);
-		if (products) {
+		dispatch(setHasNextPage(hasNextPage as boolean));
+		if (products && page !== 1) {
+			dispatch(setProductsScroll(products));
+		}
+		if (products && page === 1) {
 			dispatch(setProducts(products));
 		}
+		if (totalProducts) dispatch(setTotalProducts(totalProducts));
 	};
 
 	const getAllCategories = async () => {
@@ -31,13 +50,8 @@ export const useProductsActions = () => {
 		}
 	};
 
-	const handleCurrentPage = (value: number) => {
-		dispatch(setCurrentPage(value));
-	};
-
 	return {
 		getAllProducts,
 		getAllCategories,
-		handleCurrentPage,
 	};
 };

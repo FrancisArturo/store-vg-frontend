@@ -4,16 +4,18 @@ import { ProductItem } from "./ProductItem";
 import { Filters } from "./Filters";
 import { useProductsActions } from "../hooks/useProductsActions";
 import { useEffect } from "react";
+import { useFiltersActions } from "../hooks/useFiltersActions";
+import debounce from "just-debounce-it";
 
 export const ProductsList: React.FC = () => {
-	const { products, isLoading, categories, currentPage } = useAppSelector(
-		(state) => state.products,
-	);
-	const { brand, minPrice, maxPrice } = useAppSelector(
+	const { products, isLoading, categories, hasNextPage, totalProducts } =
+		useAppSelector((state) => state.products);
+	const { brand, minPrice, maxPrice, currentPage } = useAppSelector(
 		(state) => state.filters,
 	);
 
-	const { handleCurrentPage, getAllProducts } = useProductsActions();
+	const { getAllProducts } = useProductsActions();
+	const { handleCurrentPage } = useFiltersActions();
 
 	const { cat } = useParams();
 
@@ -21,23 +23,37 @@ export const ProductsList: React.FC = () => {
 
 	const categorySelected = cat
 		? categories.find((item) => item.title.toLowerCase() === cat)
-		: { title: "All Products", quantity: products.length };
+		: { title: "All Products", quantity: 37 };
 
-	const filteredProducts = products.filter((product) => {
-		return (
-			// (!cat || product.category === category?.title) &&
-			product.price > minPrice &&
-			(maxPrice === 0 || product.price < maxPrice) &&
-			(!brand || product.brand === brand)
-		);
-	});
+	// const filteredProducts = products.filter((product) => {
+	// 	return (
+	// 		// (!cat || product.category === category?.title) &&
+	// 		product.price > minPrice && (maxPrice === 0 || product.price < maxPrice)
+	// 		// (!brand || product.brand === brand)
+	// 	);
+	// });
+
+	const handleScroll = debounce(() => {
+		if (
+			document.body.scrollHeight - 300 < window.scrollY + window.innerHeight &&
+			hasNextPage
+		) {
+			handleCurrentPage(currentPage + 1);
+		}
+	}, 500);
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
-		getAllProducts(currentPage, cat);
-
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [currentPage]);
+	}, [isLoading]);
+
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+	useEffect(() => {
+		getAllProducts(currentPage, cat, brand, minPrice, maxPrice);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [currentPage, brand, minPrice, maxPrice]);
 
 	return (
 		<>
@@ -75,29 +91,39 @@ export const ProductsList: React.FC = () => {
 					</ol>
 				</nav>
 			)}
-			{!isLoading && filteredProducts.length !== 0 && (
+			{categorySelected && (
+				<div className="flex mx-auto max-w-2xl lg:max-w-7xl px-4 sm:px-6 lg:px-8 pt-10">
+					<h1 className="text-4xl font-bold tracking-tight text-gray-900">
+						{categorySelected.title}
+					</h1>
+					<p className="font-medium ml-2">{categorySelected.quantity}</p>
+				</div>
+			)}
+
+			{products.length !== 0 && (
 				<Filters
-					products={filteredProducts}
-					quantity={filteredProducts.length}
+					products={products}
+					quantity={products.length}
+					totalProducts={totalProducts}
 					category={categorySelected}
 					isLoading={isLoading}
 				/>
 			)}
 
-			{!isLoading && filteredProducts.length === 0 && <p>Products not found</p>}
+			{!isLoading && products.length === 0 && <p>Products not found</p>}
 			{categorySelected && (
 				<div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
 					<div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-						{filteredProducts.map((product) => (
+						{products.map((product) => (
 							<ProductItem product={product} key={product.sku} />
 						))}
 					</div>
-					<button
+					{/* <button
 						type="button"
 						onClick={() => handleCurrentPage(currentPage + 1)}
 					>
 						More
-					</button>
+					</button> */}
 				</div>
 			)}
 		</>

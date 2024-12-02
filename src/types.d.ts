@@ -50,7 +50,7 @@ export interface Review {
 
 export type ProductsRes = {
 	docs: Product[];
-	hasNextpage: boolean;
+	hasNextPage: boolean;
 	hasPrevPage: boolean;
 	limit: number;
 	nextPage: number;
@@ -64,6 +64,7 @@ export type ProductsRes = {
 export type ApiGetProductsRes = {
 	ok: boolean;
 	products: ProductsRes;
+	totalProducts: Product[];
 };
 
 export type ApiGetProductRes = {
@@ -96,9 +97,10 @@ export interface ProductInCart {
 
 export interface ProductsStoreState {
 	products: Product[];
+	totalProducts: Product[];
 	categories: CategoryFound[];
 	isLoading: boolean;
-	currentPage: number;
+	hasNextPage: boolean;
 }
 export interface CartStoreState {
 	cartProducts: ProductInCart[];
@@ -109,6 +111,8 @@ export interface CartStoreState {
 export interface FiltersStoreState {
 	minPrice: number;
 	maxPrice: number;
+	currentPage: number;
+	category: string;
 	brand: string;
 }
 

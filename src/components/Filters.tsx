@@ -9,15 +9,17 @@ import { BiMinus, BiSolidSend, BiSolidXCircle } from "react-icons/bi";
 interface Props {
 	products: Product[];
 	quantity: number;
+	totalProducts: Product[];
 	category?: CategoryFound;
 	isLoading: boolean;
 }
 
 export const Filters: React.FC<Props> = ({
-	products,
-	category,
-	isLoading,
-	quantity,
+	// products,
+	totalProducts,
+	// category,
+	// isLoading,
+	// quantity,
 }) => {
 	// const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
@@ -25,7 +27,7 @@ export const Filters: React.FC<Props> = ({
 	const { addMinPriceFilter, addMaxPriceFilter, addBrandFilter } =
 		useFiltersActions();
 
-	const brandsFounded = searchBrands(products);
+	const brandsFounded = searchBrands(totalProducts);
 
 	const onSubmitFilterPrice = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -38,16 +40,16 @@ export const Filters: React.FC<Props> = ({
 			<div>
 				{/* Mobile filter dialog */}
 
-				<main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-					<div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-10 flex-col">
-						{!isLoading && category && (
+				<main className="mx-auto lg:max-w-7xl px-4 sm:px-6 lg:px-8 max-w-2xl">
+					<div className="flex items-baseline justify-between border-b border-gray-200 pb-6 flex-col">
+						{/* {!isLoading && category && (
 							<div className="flex">
 								<h1 className="text-4xl font-bold tracking-tight text-gray-900">
 									{category.title}
 								</h1>
 								<p className="font-medium ml-2">{quantity}</p>
 							</div>
-						)}
+						)} */}
 
 						<div className="flex md:gap-x-10 items-end mt-20 self-end flex-row-reverse gap-y-7 justify-between w-[100%]">
 							{filters.brand && (

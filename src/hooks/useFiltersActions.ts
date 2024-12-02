@@ -1,6 +1,7 @@
 import {
 	setBrandFilter,
 	setCategory,
+	setCurrentPage,
 	setMaxPriceFilter,
 	setMinPriceFilter,
 } from "../store/filters/slice";
@@ -24,10 +25,15 @@ export const useFiltersActions = () => {
 		dispatch(setBrandFilter(filter));
 	};
 
+	const handleCurrentPage = (value: number) => {
+		dispatch(setCurrentPage(value));
+	};
+
 	return {
 		addMinPriceFilter,
 		addMaxPriceFilter,
 		addCategoryFilter,
 		addBrandFilter,
+		handleCurrentPage,
 	};
 };

@@ -3,9 +3,10 @@ import type { CategoryFound, Product, ProductsStoreState } from "../../types";
 
 const initialState: ProductsStoreState = {
 	products: [],
+	totalProducts: [],
 	categories: [],
 	isLoading: false,
-	currentPage: 1,
+	hasNextPage: false,
 };
 
 export const productsSlice = createSlice({
@@ -13,7 +14,13 @@ export const productsSlice = createSlice({
 	initialState,
 	reducers: {
 		setProducts: (state, action: PayloadAction<Product[]>) => {
+			state.products = [...action.payload];
+		},
+		setProductsScroll: (state, action: PayloadAction<Product[]>) => {
 			state.products = [...state.products, ...action.payload];
+		},
+		setTotalProducts: (state, action: PayloadAction<Product[]>) => {
+			state.totalProducts = [...action.payload];
 		},
 		setCategories: (state, action: PayloadAction<CategoryFound[]>) => {
 			state.categories.push(...action.payload);
@@ -21,11 +28,17 @@ export const productsSlice = createSlice({
 		setIsLoading: (state, action: PayloadAction<boolean>) => {
 			state.isLoading = action.payload;
 		},
-		setCurrentPage: (state, action: PayloadAction<number>) => {
-			state.currentPage = action.payload;
+		setHasNextPage: (state, action: PayloadAction<boolean>) => {
+			state.hasNextPage = action.payload;
 		},
 	},
 });
 
-export const { setProducts, setCategories, setIsLoading, setCurrentPage } =
-	productsSlice.actions;
+export const {
+	setProducts,
+	setProductsScroll,
+	setTotalProducts,
+	setCategories,
+	setIsLoading,
+	setHasNextPage,
+} = productsSlice.actions;
