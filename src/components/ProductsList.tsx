@@ -101,13 +101,7 @@ export const ProductsList: React.FC = () => {
 			)}
 
 			{products.length !== 0 && (
-				<Filters
-					products={products}
-					quantity={products.length}
-					totalProducts={totalProducts}
-					category={categorySelected}
-					isLoading={isLoading}
-				/>
+				<Filters totalProducts={totalProducts} isLoading={isLoading} />
 			)}
 
 			{!isLoading && products.length === 0 && <p>Products not found</p>}
