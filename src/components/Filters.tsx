@@ -100,19 +100,19 @@ export const Filters: React.FC<Props> = ({ totalProducts, isLoading }) => {
 								className="priceRange flex items-end"
 								onSubmit={(e) => onSubmitFilterPrice(e)}
 							>
-								<p className="mr-4 text-gray-700 text-sm font-medium">
+								<p className="mr-3 text-gray-700 text-sm font-medium">
 									Price:{" "}
 								</p>
 								<input
 									type="text"
-									className="w-20 text-center bg-gray-300"
+									className="w-20 text-center bg-gray-300 rounded-md"
 									placeholder="$ Min"
 									name="minPrice"
 								/>
 								<BiMinus className="text-2xl" />
 								<input
 									type="text"
-									className="w-20 text-center bg-gray-300"
+									className="w-20 text-center bg-gray-300 rounded-md"
 									placeholder="$ Max"
 									name="maxPrice"
 								/>
