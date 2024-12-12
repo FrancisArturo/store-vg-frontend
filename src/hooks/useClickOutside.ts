@@ -1,14 +1,20 @@
 import { type RefObject, useEffect } from "react";
 
 export const useClickOutside = (
-	ref: RefObject<HTMLElement | undefined>,
+	barRef: RefObject<HTMLElement | undefined>,
+	iconRef: RefObject<HTMLElement | undefined>,
 	callback: () => void,
 ) => {
-	console.log("llamada");
-
+	console.log("llamada useClickOutside");
 	useEffect(() => {
 		const handleClick = (event: MouseEvent): void => {
-			if (ref.current && !ref.current.contains(event.target as Node)) {
+			if (
+				barRef.current &&
+				iconRef.current &&
+				!barRef.current.contains(event.target as Node) &&
+				!iconRef.current.contains(event.target as Node)
+			) {
+				console.log("callback call");
 				callback();
 			}
 		};
@@ -18,5 +24,5 @@ export const useClickOutside = (
 		return () => {
 			document.removeEventListener("mousedown", handleClick);
 		};
-	}, [ref, callback]);
+	}, [barRef, iconRef, callback]);
 };

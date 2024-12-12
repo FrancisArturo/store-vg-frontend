@@ -1,4 +1,4 @@
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import {
 	Dialog,
 	DialogBackdrop,
@@ -22,6 +22,8 @@ import { useCartActions } from "../hooks/useCartActions";
 import { useAppSelector } from "../hooks/store";
 import { ShoppingCartIcon } from "@heroicons/react/20/solid";
 import { useClickOutside } from "../hooks/useClickOutside";
+import debounce from "just-debounce-it";
+// import { Product } from "../types";
 
 const navigation = {
 	categories: [
@@ -175,19 +177,49 @@ const navbarCatImages = [
 export const NavBar: React.FC = () => {
 	const [open, setOpen] = useState(false);
 	const [openSearchBar, setOpenSearchBar] = useState(false);
-	const ref = useRef<HTMLDivElement>(null);
+	const [catSelected, setCatSelected] = useState("");
+	const [searchValue, setSearchValue] = useState("");
+	// const [productsFound, setProductsFound] = useState<Product[]>();
+
 	const { cartProducts } = useAppSelector((state) => state.cart);
-	const { categories: categoriesFound } = useAppSelector(
+	const { categories: categoriesFound, totalProducts } = useAppSelector(
 		(state) => state.products,
 	);
+	const searchBarRef = useRef<HTMLDivElement>(null);
+	const searchIconRef = useRef<HTMLDivElement>(null);
+
 	const { setIsOpenCart } = useCartActions();
-	const [catSelected, setCatSelected] = useState("");
 
 	const onClickCloseSearch = () => {
 		setOpenSearchBar(false);
+		setSearchValue("");
 	};
 
-	useClickOutside(ref, onClickCloseSearch);
+	useClickOutside(searchBarRef, searchIconRef, onClickCloseSearch);
+
+	const onChangeInputSearch = debounce(
+		(e: React.ChangeEvent<HTMLInputElement>) => {
+			const newValue = e.target.value.toLocaleLowerCase().trim();
+			if (newValue === searchValue) return;
+			setSearchValue(newValue);
+		},
+		2000,
+	);
+
+	const productsFound =
+		searchValue.length < 3
+			? []
+			: totalProducts.filter((product) =>
+					product.title.toLocaleLowerCase().trim().includes(searchValue),
+				);
+
+	// useEffect(() => {
+	// 	console.log(searchValue);
+	// 	const newSearch = totalProducts.filter((product) =>
+	// 		product.title.toLocaleLowerCase().trim().includes(searchValue),
+	// 	);
+	// 	setProductsFound(newSearch);
+	// }, [searchValue, totalProducts]);
 
 	return (
 		<>
@@ -457,7 +489,7 @@ export const NavBar: React.FC = () => {
 									</div>
 
 									{/* Search */}
-									<div className="flex lg:ml-6">
+									<div className="flex lg:ml-6" ref={searchIconRef}>
 										<button
 											type="button"
 											className="p-2 text-gray-400 hover:text-gray-500"
@@ -495,68 +527,37 @@ export const NavBar: React.FC = () => {
 				</header>
 			</div>
 			{openSearchBar && (
-				<div className="flex flex-col items-end mx-auto lg:max-w-7xl" ref={ref}>
-					<div className="w-[350px] z-10 absolute">
+				<div
+					className="flex flex-col items-end mx-auto lg:max-w-7xl "
+					ref={searchBarRef}
+				>
+					<div className="w-[350px] z-10 absolute duration-500">
 						<input
 							type="text"
-							placeholder="item"
-							className="w-[100%] rounded-sm bg-gray-200 py-1 px-3"
+							placeholder="search by product title..."
+							className="w-[100%] rounded-sm bg-gray-200 py-1 px-3 "
+							onChange={onChangeInputSearch}
 						/>
 
 						<div className="w-[350px] absolute top[100%] bg-white border-2 border-gray-400 z-10">
-							<ul>
-								<li className="flex p-4 border-gray-200 hover:bg-gray-200 cursor-pointer">
+							<div>
+								{productsFound.map((product) => (
 									<a
-										className="h-16 w-16 rounded-md border border-gray-200 bg-white"
-										href="/product/AZ1L68SM"
+										key={product.sku}
+										className="flex  hover:bg-gray-200 p-4 border-b-2 border-gray-200 cursor-pointer"
+										href={`product/${product.sku}`}
 									>
-										<img
-											src="https://cdn.dummyjson.com/products/images/smartphones/iPhone%20X/thumbnail.png"
-											alt="iphone x"
-										/>
+										<div className="h-16 w-16 overflow-hidden rounded-md border border-gray-200 bg-white">
+											<img src={product.thumbnail} alt={product.title} />
+										</div>
+
+										<div className="ml-8 flex flex-col justify-between">
+											<p>{product.title} </p>
+											<p>${product.price}</p>
+										</div>
 									</a>
-									<div className="ml-8 flex flex-col justify-between">
-										<p>Title: Lorem, ipsum.</p>
-										<p>Price: $ 200</p>
-									</div>
-								</li>
-								<li className="flex p-4  border-t-2 border-gray-200 hover:bg-gray-200">
-									<div className="h-16 w-16 rounded-md border border-gray-200 bg-white">
-										<img
-											src="https://cdn.dummyjson.com/products/images/smartphones/iPhone%20X/thumbnail.png"
-											alt="iphone x"
-										/>
-									</div>
-									<div className="ml-8 flex flex-col justify-between">
-										<p>Title: Lorem, ipsum.</p>
-										<p>Price: $ 200</p>
-									</div>
-								</li>
-								<li className="flex p-4  border-t-2 bborder-gray-200 hover:bg-gray-200">
-									<div className="h-16 w-16 rounded-md border border-gray-200 bg-white">
-										<img
-											src="https://cdn.dummyjson.com/products/images/smartphones/iPhone%20X/thumbnail.png"
-											alt="iphone x"
-										/>
-									</div>
-									<div className="ml-8 flex flex-col justify-between">
-										<p>Title: Lorem, ipsum.</p>
-										<p>Price: $ 200</p>
-									</div>
-								</li>
-								<li className="flex p-4  border-t-2 border-gray-200 hover:bg-gray-200">
-									<div className="h-16 w-16 rounded-md border border-gray-200 bg-white">
-										<img
-											src="https://cdn.dummyjson.com/products/images/smartphones/iPhone%20X/thumbnail.png"
-											alt="iphone x"
-										/>
-									</div>
-									<div className="ml-8 flex flex-col justify-between">
-										<p>Title: Lorem, ipsum.</p>
-										<p>Price: $ 200</p>
-									</div>
-								</li>
-							</ul>
+								))}
+							</div>
 						</div>
 					</div>
 				</div>
