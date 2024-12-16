@@ -4,7 +4,7 @@ export interface Product {
 	description: string;
 	category: string;
 	categorySlug: string;
-	price: number;
+	price: Price;
 	discountPercentage: number;
 	rating: number;
 	stock: number;
@@ -25,6 +25,11 @@ export interface Product {
 	images: string[];
 	imagesSlider: string[];
 	thumbnail: string;
+}
+
+export interface Price {
+	usd: number;
+	eur: number;
 }
 
 export interface Dimensions {
@@ -89,7 +94,7 @@ export interface ProductInCart {
 	id: ProductInCartId;
 	title: string;
 	category: string;
-	price: number;
+	price: Price;
 	thumbnail: string;
 	quantity: number;
 	sku: string;

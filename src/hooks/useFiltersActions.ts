@@ -1,6 +1,7 @@
 import {
 	setBrandFilter,
 	setCategory,
+	setCurrency,
 	setCurrentPage,
 	setMaxPriceFilter,
 	setMinPriceFilter,
@@ -29,11 +30,16 @@ export const useFiltersActions = () => {
 		dispatch(setCurrentPage(value));
 	};
 
+	const changeCurrency = (value: string) => {
+		dispatch(setCurrency(value));
+	};
+
 	return {
 		addMinPriceFilter,
 		addMaxPriceFilter,
 		addCategoryFilter,
 		addBrandFilter,
 		handleCurrentPage,
+		changeCurrency,
 	};
 };

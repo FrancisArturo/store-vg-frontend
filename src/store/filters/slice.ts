@@ -6,6 +6,7 @@ const initialState = {
 	currentPage: 1,
 	category: "",
 	brand: "",
+	currency: "usd",
 };
 
 export const filterSlice = createSlice({
@@ -30,6 +31,10 @@ export const filterSlice = createSlice({
 		setCurrentPage: (state, action: PayloadAction<number>) => {
 			state.currentPage = action.payload;
 		},
+		setCurrency: (state, action: PayloadAction<string>) => {
+			state.currency = action.payload;
+			state.currentPage = 1;
+		},
 	},
 });
 
@@ -39,4 +44,5 @@ export const {
 	setCategory,
 	setBrandFilter,
 	setCurrentPage,
+	setCurrency,
 } = filterSlice.actions;

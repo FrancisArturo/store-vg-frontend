@@ -5,7 +5,10 @@
 		"description": "The iPhone 5s is a classic smartphone known for its compact design and advanced features during its release. While it's an older model, it still provides a reliable user experience.",
 		"category": "Smartphones",
 		"categorySlug": "smartphones",
-		"price": 199.99,
+		"price": {
+			"usd": 199.99,
+			"eur": 189.99
+		},
 		"discountPercentage": 11.85,
 		"rating": 3.92,
 		"stock": 65,
@@ -68,7 +71,10 @@
 		"description": "The iPhone 6 is a stylish and capable smartphone with a larger display and improved performance. It introduced new features and design elements, making it a popular choice in its time.",
 		"category": "Smartphones",
 		"categorySlug": "smartphones",
-		"price": 299.99,
+		"price": {
+			"usd": 299.99,
+			"eur": 284.99
+		},
 		"discountPercentage": 4.54,
 		"rating": 3.76,
 		"stock": 99,
@@ -130,7 +136,10 @@
 		"description": "The iPhone 13 Pro is a cutting-edge smartphone with a powerful camera system, high-performance chip, and stunning display. It offers advanced features for users who demand top-notch technology.",
 		"category": "Smartphones",
 		"categorySlug": "smartphones",
-		"price": 1099.99,
+		"price": {
+			"usd": 1099.99,
+			"eur": 1045.99
+		},
 		"discountPercentage": 18.3,
 		"rating": 3.42,
 		"stock": 26,
@@ -192,7 +201,10 @@
 		"description": "The iPhone X is a flagship smartphone featuring a bezel-less OLED display, facial recognition technology (Face ID), and impressive performance. It represents a milestone in iPhone design and innovation.",
 		"category": "Smartphones",
 		"categorySlug": "smartphones",
-		"price": 899.99,
+		"price": {
+			"usd": 899.99,
+			"eur": 855.99
+		},
 		"discountPercentage": 14.19,
 		"rating": 4.96,
 		"stock": 99,
@@ -254,7 +266,10 @@
 		"description": "The Oppo A57 is a mid-range smartphone known for its sleek design and capable features. It offers a balance of performance and affordability, making it a popular choice.",
 		"category": "Smartphones",
 		"categorySlug": "smartphones",
-		"price": 249.99,
+		"price": {
+			"usd": 249.99,
+			"eur": 235.99
+		},
 		"discountPercentage": 12.17,
 		"rating": 3.1,
 		"stock": 76,
@@ -316,7 +331,10 @@
 		"description": "The Oppo F19 Pro Plus is a feature-rich smartphone with a focus on camera capabilities. It boasts advanced photography features and a powerful performance for a premium user experience.",
 		"category": "Smartphones",
 		"categorySlug": "smartphones",
-		"price": 399.99,
+		"price": {
+			"usd": 399.99,
+			"eur": 380.99
+		},
 		"discountPercentage": 15.62,
 		"rating": 2.57,
 		"stock": 92,
@@ -378,7 +396,10 @@
 		"description": "The Oppo K1 series offers a range of smartphones with various features and specifications. Known for their stylish design and reliable performance, the Oppo K1 series caters to diverse user preferences.",
 		"category": "Smartphones",
 		"categorySlug": "smartphones",
-		"price": 299.99,
+		"price": {
+			"usd": 299.99,
+			"eur": 285.99
+		},
 		"discountPercentage": 14.58,
 		"rating": 3.39,
 		"stock": 61,
@@ -440,7 +461,10 @@
 		"description": "The Realme C35 is a budget-friendly smartphone with a focus on providing essential features for everyday use. It offers a reliable performance and user-friendly experience.",
 		"category": "Smartphones",
 		"categorySlug": "smartphones",
-		"price": 149.99,
+		"price": {
+			"usd": 149.99,
+			"eur": 142.99
+		},
 		"discountPercentage": 16.47,
 		"rating": 2.56,
 		"stock": 81,
@@ -503,7 +527,10 @@
 		"description": "The Realme X is a mid-range smartphone known for its sleek design and impressive display. It offers a good balance of performance and camera capabilities for users seeking a quality device.",
 		"category": "Smartphones",
 		"categorySlug": "smartphones",
-		"price": 299.99,
+		"price": {
+			"usd": 299.99,
+			"eur": 285.99
+		},
 		"discountPercentage": 2.39,
 		"rating": 4.42,
 		"stock": 87,
@@ -566,7 +593,10 @@
 		"description": "The Realme XT is a feature-rich smartphone with a focus on camera technology. It comes equipped with advanced camera sensors, delivering high-quality photos and videos for photography enthusiasts.",
 		"category": "Smartphones",
 		"categorySlug": "smartphones",
-		"price": 349.99,
+		"price": {
+			"usd": 349.99,
+			"eur": 332.99
+		},
 		"discountPercentage": 3.03,
 		"rating": 4.14,
 		"stock": 53,
@@ -628,7 +658,10 @@
 		"description": "The Samsung Galaxy S7 is a flagship smartphone known for its sleek design and advanced features. It features a high-resolution display, powerful camera, and robust performance.",
 		"category": "Smartphones",
 		"categorySlug": "smartphones",
-		"price": 299.99,
+		"price": {
+			"usd": 299.99,
+			"eur": 285.99
+		},
 		"discountPercentage": 8.83,
 		"rating": 4.9,
 		"stock": 55,
@@ -690,7 +723,10 @@
 		"description": "The Samsung Galaxy S8 is a premium smartphone with an Infinity Display, offering a stunning visual experience. It boasts advanced camera capabilities and cutting-edge technology.",
 		"category": "Smartphones",
 		"categorySlug": "smartphones",
-		"price": 499.99,
+		"price": {
+			"usd": 499.99,
+			"eur": 475.99
+		},
 		"discountPercentage": 2.69,
 		"rating": 3.69,
 		"stock": 75,
@@ -752,7 +788,10 @@
 		"description": "The Samsung Galaxy S10 is a flagship device featuring a dynamic AMOLED display, versatile camera system, and powerful performance. It represents innovation and excellence in smartphone technology.",
 		"category": "Smartphones",
 		"categorySlug": "smartphones",
-		"price": 699.99,
+		"price": {
+			"usd": 699.99,
+			"eur": 665.99
+		},
 		"discountPercentage": 0.97,
 		"rating": 2.81,
 		"stock": 40,
@@ -814,7 +853,10 @@
 		"description": "The Vivo S1 is a stylish and mid-range smartphone offering a blend of design and performance. It features a vibrant display, capable camera system, and reliable functionality.",
 		"category": "Smartphones",
 		"categorySlug": "smartphones",
-		"price": 249.99,
+		"price": {
+			"usd": 249.99,
+			"eur": 236.99
+		},
 		"discountPercentage": 4.25,
 		"rating": 2.83,
 		"stock": 13,
@@ -876,7 +918,10 @@
 		"description": "The Vivo V9 is a smartphone known for its sleek design and emphasis on capturing high-quality selfies. It features a notch display, dual-camera setup, and a modern design.",
 		"category": "Smartphones",
 		"categorySlug": "smartphones",
-		"price": 299.99,
+		"price": {
+			"usd": 299.99,
+			"eur": 285.99
+		},
 		"discountPercentage": 14.57,
 		"rating": 3.1,
 		"stock": 19,
@@ -938,7 +983,10 @@
 		"description": "The Vivo X21 is a premium smartphone with a focus on cutting-edge technology. It features an in-display fingerprint sensor, a high-resolution display, and advanced camera capabilities.",
 		"category": "Smartphones",
 		"categorySlug": "smartphones",
-		"price": 499.99,
+		"price": {
+			"usd": 499.99,
+			"eur": 475.99
+		},
 		"discountPercentage": 7.32,
 		"rating": 2.75,
 		"stock": 0,
@@ -1000,7 +1048,10 @@
 		"description": "The MacBook Pro 14 Inch in Space Grey is a powerful and sleek laptop, featuring Apple's M1 Pro chip for exceptional performance and a stunning Retina display.",
 		"category": "Laptops",
 		"categorySlug": "laptops",
-		"price": 1999.99,
+		"price": {
+			"usd": 1999.99,
+			"eur": 1902.99
+		},
 		"discountPercentage": 9.25,
 		"rating": 3.13,
 		"stock": 39,
@@ -1063,7 +1114,10 @@
 		"description": "The Asus Zenbook Pro Dual Screen Laptop is a high-performance device with dual screens, providing productivity and versatility for creative professionals.",
 		"category": "Laptops",
 		"categorySlug": "laptops",
-		"price": 1799.99,
+		"price": {
+			"usd": 1799.99,
+			"eur": 1712.99
+		},
 		"discountPercentage": 9.21,
 		"rating": 3.14,
 		"stock": 38,
@@ -1126,7 +1180,10 @@
 		"description": "The Huawei Matebook X Pro is a slim and stylish laptop with a high-resolution touchscreen display, offering a premium experience for users on the go.",
 		"category": "Laptops",
 		"categorySlug": "laptops",
-		"price": 1399.99,
+		"price": {
+			"usd": 1399.99,
+			"eur": 1332.99
+		},
 		"discountPercentage": 15.25,
 		"rating": 4.62,
 		"stock": 34,
@@ -1189,7 +1246,10 @@
 		"description": "The Lenovo Yoga 920 is a 2-in-1 convertible laptop with a flexible hinge, allowing you to use it as a laptop or tablet, offering versatility and portability.",
 		"category": "Laptops",
 		"categorySlug": "laptops",
-		"price": 1099.99,
+		"price": {
+			"usd": 1099.99,
+			"eur": 1046.99
+		},
 		"discountPercentage": 7.77,
 		"rating": 2.98,
 		"stock": 71,
@@ -1252,7 +1312,10 @@
 		"description": "The New DELL XPS 13 9300 Laptop is a compact and powerful device, featuring a virtually borderless InfinityEdge display and high-end performance for various tasks.",
 		"category": "Laptops",
 		"categorySlug": "laptops",
-		"price": 1499.99,
+		"price": {
+			"usd": 1499.99,
+			"eur": 1427.99
+		},
 		"discountPercentage": 11.7,
 		"rating": 2.98,
 		"stock": 18,
@@ -1315,7 +1378,10 @@
 		"description": "The Amazon Echo Plus is a smart speaker with built-in Alexa voice control. It features premium sound quality and serves as a hub for controlling smart home devices.",
 		"category": "Mobile-Accessories",
 		"categorySlug": "mobile-accessories",
-		"price": 99.99,
+		"price": {
+			"usd": 99.99,
+			"eur": 95.99
+		},
 		"discountPercentage": 16.3,
 		"rating": 3.52,
 		"stock": 50,
@@ -1378,7 +1444,10 @@
 		"description": "The Apple AirPods Max in Silver are premium over-ear headphones with high-fidelity audio, adaptive EQ, and active noise cancellation. Experience immersive sound in style.",
 		"category": "Mobile-Accessories",
 		"categorySlug": "mobile-accessories",
-		"price": 549.99,
+		"price": {
+			"usd": 549.99,
+			"eur": 523.99
+		},
 		"discountPercentage": 11.7,
 		"rating": 3.11,
 		"stock": 7,
@@ -1439,7 +1508,10 @@
 		"description": "The Apple AirPower Wireless Charger provides a convenient way to charge your compatible Apple devices wirelessly. Simply place your devices on the charging mat for effortless charging.",
 		"category": "Mobile-Accessories",
 		"categorySlug": "mobile-accessories",
-		"price": 79.99,
+		"price": {
+			"usd": 79.99,
+			"eur": 75.99
+		},
 		"discountPercentage": 6.54,
 		"rating": 4.51,
 		"stock": 78,
@@ -1500,7 +1572,10 @@
 		"description": "The Apple HomePod Mini in Cosmic Grey is a compact smart speaker that delivers impressive audio and integrates seamlessly with the Apple ecosystem for a smart home experience.",
 		"category": "Mobile-Accessories",
 		"categorySlug": "mobile-accessories",
-		"price": 99.99,
+		"price": {
+			"usd": 99.99,
+			"eur": 94.99
+		},
 		"discountPercentage": 3.7,
 		"rating": 4.51,
 		"stock": 65,
@@ -1561,7 +1636,10 @@
 		"description": "The Apple iPhone Charger is a high-quality charger designed for fast and efficient charging of your iPhone. Ensure your device stays powered up and ready to go.",
 		"category": "Mobile-Accessories",
 		"categorySlug": "mobile-accessories",
-		"price": 19.99,
+		"price": {
+			"usd": 19.99,
+			"eur": 18.99
+		},
 		"discountPercentage": 1.01,
 		"rating": 3.03,
 		"stock": 4,
@@ -1623,7 +1701,10 @@
 		"description": "The Apple MagSafe Battery Pack is a portable and convenient way to add extra battery life to your MagSafe-compatible iPhone. Attach it magnetically for a secure connection.",
 		"category": "Mobile-Accessories",
 		"categorySlug": "mobile-accessories",
-		"price": 99.99,
+		"price": {
+			"usd": 99.99,
+			"eur": 95.99
+		},
 		"discountPercentage": 10.27,
 		"rating": 2.61,
 		"stock": 80,
@@ -1685,7 +1766,10 @@
 		"description": "The Apple Watch Series 4 in Gold is a stylish and advanced smartwatch with features like heart rate monitoring, fitness tracking, and a beautiful Retina display.",
 		"category": "Mobile-Accessories",
 		"categorySlug": "mobile-accessories",
-		"price": 349.99,
+		"price": {
+			"usd": 349.99,
+			"eur": 332.99
+		},
 		"discountPercentage": 5.14,
 		"rating": 4.42,
 		"stock": 68,
@@ -1748,7 +1832,10 @@
 		"description": "The Beats Flex Wireless Earphones offer a comfortable and versatile audio experience. With magnetic earbuds and up to 12 hours of battery life, they are ideal for everyday use.",
 		"category": "Mobile-Accessories",
 		"categorySlug": "mobile-accessories",
-		"price": 49.99,
+		"price": {
+			"usd": 49.99,
+			"eur": 47.99
+		},
 		"discountPercentage": 8.27,
 		"rating": 4.17,
 		"stock": 49,
@@ -1809,7 +1896,10 @@
 		"description": "The iPhone 12 Silicone Case with MagSafe in Plum is a stylish and protective case designed for the iPhone 12. It features MagSafe technology for easy attachment of accessories.",
 		"category": "Mobile-Accessories",
 		"categorySlug": "mobile-accessories",
-		"price": 29.99,
+		"price": {
+			"usd": 29.99,
+			"eur": 27.99
+		},
 		"discountPercentage": 14.35,
 		"rating": 4.41,
 		"stock": 51,
@@ -1873,7 +1963,10 @@
 		"description": "The Monopod is a versatile camera accessory for stable and adjustable shooting. Perfect for capturing selfies, group photos, and videos with ease.",
 		"category": "Mobile-Accessories",
 		"categorySlug": "mobile-accessories",
-		"price": 19.99,
+		"price": {
+			"usd": 19.99,
+			"eur": 18.99
+		},
 		"discountPercentage": 11.62,
 		"rating": 2.99,
 		"stock": 96,
@@ -1935,7 +2028,10 @@
 		"description": "The Selfie Lamp with iPhone is a portable and adjustable LED light designed to enhance your selfies and video calls. Attach it to your iPhone for well-lit photos.",
 		"category": "Mobile-Accessories",
 		"categorySlug": "mobile-accessories",
-		"price": 14.99,
+		"price": {
+			"usd": 14.99,
+			"eur": 13.99
+		},
 		"discountPercentage": 13.86,
 		"rating": 2.84,
 		"stock": 89,
@@ -1996,7 +2092,10 @@
 		"description": "The Selfie Stick Monopod is a extendable and foldable device for capturing the perfect selfie or group photo. Compatible with smartphones and cameras.",
 		"category": "Mobile-Accessories",
 		"categorySlug": "mobile-accessories",
-		"price": 12.99,
+		"price": {
+			"usd": 12.99,
+			"eur": 11.99
+		},
 		"discountPercentage": 15.29,
 		"rating": 2.93,
 		"stock": 33,
@@ -2057,7 +2156,10 @@
 		"description": "The TV Studio Camera Pedestal is a professional-grade camera support system for smooth and precise camera movements in a studio setting. Ideal for broadcast and production.",
 		"category": "Mobile-Accessories",
 		"categorySlug": "mobile-accessories",
-		"price": 499.99,
+		"price": {
+			"usd": 499.99,
+			"eur": 474.99
+		},
 		"discountPercentage": 10.28,
 		"rating": 4.05,
 		"stock": 45,
@@ -2118,7 +2220,10 @@
 		"description": "The iPad Mini 2021 in Starlight is a compact and powerful tablet from Apple. Featuring a stunning Retina display, powerful A-series chip, and a sleek design, it offers a premium tablet experience.",
 		"category": "Tablets",
 		"categorySlug": "tablets",
-		"price": 499.99,
+		"price": {
+			"usd": 499.99,
+			"eur": 474.99
+		},
 		"discountPercentage": 19.48,
 		"rating": 3.87,
 		"stock": 32,
@@ -2182,7 +2287,10 @@
 		"description": "The Samsung Galaxy Tab S8 Plus in Grey is a high-performance Android tablet by Samsung. With a large AMOLED display, powerful processor, and S Pen support, it's ideal for productivity and entertainment.",
 		"category": "Tablets",
 		"categorySlug": "tablets",
-		"price": 599.99,
+		"price": {
+			"usd": 599.99,
+			"eur": 569.99
+		},
 		"discountPercentage": 8.11,
 		"rating": 3.43,
 		"stock": 76,
@@ -2246,7 +2354,10 @@
 		"description": "The Samsung Galaxy Tab in White is a sleek and versatile Android tablet. With a vibrant display, long-lasting battery, and a range of features, it offers a great user experience for various tasks.",
 		"category": "Tablets",
 		"categorySlug": "tablets",
-		"price": 349.99,
+		"price": {
+			"usd": 349.99,
+			"eur": 330.99
+		},
 		"discountPercentage": 4.82,
 		"rating": 3.7,
 		"stock": 0,

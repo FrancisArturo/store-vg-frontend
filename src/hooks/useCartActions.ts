@@ -2,7 +2,8 @@ import {
 	addQuantity,
 	decreaseQuantity,
 	deleteProductInCart,
-	setAmount,
+	setAmountEur,
+	setAmountUsd,
 	setIsOpen,
 	setProductInCart,
 } from "../store/cart/slice";
@@ -39,8 +40,14 @@ export const useCartActions = () => {
 		dispatch(decreaseQuantity(id));
 	};
 
-	const setCartAmount = (cart: ProductInCart[]) => {
-		dispatch(setAmount(cart));
+	const setCartAmount = (cart: ProductInCart[], curr: string) => {
+		if (curr === "usd") {
+			dispatch(setAmountUsd(cart));
+		}
+		if (curr === "eur") {
+			dispatch(setAmountEur(cart));
+		}
+		return;
 	};
 	const setIsOpenCart = (value: boolean) => {
 		dispatch(setIsOpen(value));

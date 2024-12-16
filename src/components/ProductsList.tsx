@@ -10,7 +10,7 @@ import debounce from "just-debounce-it";
 export const ProductsList: React.FC = () => {
 	const { products, isLoading, categories, hasNextPage, totalProducts } =
 		useAppSelector((state) => state.products);
-	const { brand, minPrice, maxPrice, currentPage } = useAppSelector(
+	const { brand, minPrice, maxPrice, currentPage, currency } = useAppSelector(
 		(state) => state.filters,
 	);
 
@@ -41,9 +41,9 @@ export const ProductsList: React.FC = () => {
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
-		getAllProducts(currentPage, cat, brand, minPrice, maxPrice);
+		getAllProducts(currentPage, currency, cat, brand, minPrice, maxPrice);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [currentPage, brand, minPrice, maxPrice]);
+	}, [currentPage, brand, minPrice, maxPrice, currency]);
 
 	return (
 		<>

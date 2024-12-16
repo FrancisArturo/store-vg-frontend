@@ -40,13 +40,16 @@ export const cartSlice = createSlice({
 				return product;
 			});
 		},
-		setAmount: (state, action: PayloadAction<ProductInCart[]>) => {
+		setAmountUsd: (state, action: PayloadAction<ProductInCart[]>) => {
 			const itemValues = action.payload.map((item) => {
-				return item.price * item.quantity;
+				return item.price.usd * item.quantity;
 			});
-			// state.amount = Math.round(
-			// 	(itemValues.reduce((a, b) => a + b, 0) * 100) / 100,
-			// );
+			state.amount = Number(itemValues.reduce((a, b) => a + b, 0).toFixed(2));
+		},
+		setAmountEur: (state, action: PayloadAction<ProductInCart[]>) => {
+			const itemValues = action.payload.map((item) => {
+				return item.price.eur * item.quantity;
+			});
 			state.amount = Number(itemValues.reduce((a, b) => a + b, 0).toFixed(2));
 		},
 		setIsOpen: (state, action: PayloadAction<boolean>) => {
@@ -61,5 +64,6 @@ export const {
 	setIsOpen,
 	addQuantity,
 	decreaseQuantity,
-	setAmount,
+	setAmountUsd,
+	setAmountEur,
 } = cartSlice.actions;

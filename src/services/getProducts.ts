@@ -4,6 +4,7 @@ const API_URL = "http://localhost:3000/api/products/";
 
 export const getProducts = async (
 	page: number,
+	currency: string,
 	category?: string,
 	brand?: string,
 	minPrice?: number,
@@ -11,7 +12,7 @@ export const getProducts = async (
 ): Promise<[Error?, Product[]?, boolean?, Product[]?]> => {
 	try {
 		const res = await fetch(
-			`${API_URL}?page=${page}&cat=${category}&brand=${brand}&minPrice=${minPrice}&maxPrice=${maxPrice}`,
+			`${API_URL}?page=${page}&currency=${currency}&cat=${category}&brand=${brand}&minPrice=${minPrice}&maxPrice=${maxPrice}`,
 		);
 		if (!res.ok) throw new Error("fetching data error");
 		const data = (await res.json()) as ApiGetProductsRes;

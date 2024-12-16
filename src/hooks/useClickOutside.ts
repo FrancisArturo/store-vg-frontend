@@ -5,7 +5,7 @@ export const useClickOutside = (
 	iconRef: RefObject<HTMLElement | undefined>,
 	callback: () => void,
 ) => {
-	console.log("llamada useClickOutside");
+	// console.log("llamada useClickOutside");
 	useEffect(() => {
 		const handleClick = (event: MouseEvent): void => {
 			if (

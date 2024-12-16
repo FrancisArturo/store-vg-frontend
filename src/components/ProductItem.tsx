@@ -2,12 +2,15 @@ import { useCartActions } from "../hooks/useCartActions";
 import type { Product } from "../types";
 import { useCheckCartProduct } from "../hooks/useCheckCartProduct";
 import { BsCartCheckFill, BsCartPlusFill } from "react-icons/bs";
+import { useAppSelector } from "../hooks/store";
 
 interface Props {
 	product: Product;
 }
 
 export const ProductItem: React.FC<Props> = ({ product }) => {
+	const { currency } = useAppSelector((state) => state.filters);
+
 	const { addProductToCart } = useCartActions();
 	const { isProductInCart } = useCheckCartProduct();
 
@@ -26,7 +29,8 @@ export const ProductItem: React.FC<Props> = ({ product }) => {
 				<div>
 					<h3 className="mt-4 text-sm text-gray-700">{product.title}</h3>
 					<p className="mt-1 text-lg font-medium text-gray-900">
-						$ {product.price}
+						{currency === "usd" && <p>$ {product.price.usd}</p>}
+						{currency === "eur" && <p>€ {product.price.eur}</p>}
 					</p>
 				</div>
 				{isProductInCart(product) ? (

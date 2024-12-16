@@ -23,6 +23,7 @@ import { useAppSelector } from "../hooks/store";
 import { ShoppingCartIcon } from "@heroicons/react/20/solid";
 import { useClickOutside } from "../hooks/useClickOutside";
 import debounce from "just-debounce-it";
+import { useFiltersActions } from "../hooks/useFiltersActions";
 // import { Product } from "../types";
 
 const navigation = {
@@ -181,6 +182,7 @@ export const NavBar: React.FC = () => {
 	const [searchValue, setSearchValue] = useState("");
 
 	const { cartProducts } = useAppSelector((state) => state.cart);
+	const { currency } = useAppSelector((state) => state.filters);
 	const { categories: categoriesFound, totalProducts } = useAppSelector(
 		(state) => state.products,
 	);
@@ -188,6 +190,7 @@ export const NavBar: React.FC = () => {
 	const searchIconRef = useRef<HTMLDivElement>(null);
 
 	const { setIsOpenCart } = useCartActions();
+	const { changeCurrency } = useFiltersActions();
 
 	const onClickOpenSearch = () => {
 		setOpenSearchBar(!openSearchBar);
@@ -310,17 +313,40 @@ export const NavBar: React.FC = () => {
 								))}
 							</div>
 							<div className="border-t border-gray-200 px-4 py-6">
-								<a href="#" className="-m-2 flex items-center p-2">
-									<img
-										alt=""
-										src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
-										className="block h-auto w-5 shrink-0"
-									/>
-									<span className="ml-3 block text-base font-medium text-gray-900">
-										USD
-									</span>
-									<span className="sr-only">, change currency</span>
-								</a>
+								{currency === "usd" && (
+									<button
+										type="button"
+										className="-m-2 flex items-center p-2"
+										onClick={() => changeCurrency("eur")}
+									>
+										<img
+											alt=""
+											src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
+											className="block h-auto w-5 shrink-0"
+										/>
+										<span className="ml-3 block text-base font-medium text-gray-900">
+											USD
+										</span>
+										<span className="sr-only">, change currency</span>
+									</button>
+								)}
+								{currency === "eur" && (
+									<button
+										type="button"
+										className="-m-2 flex items-center p-2"
+										onClick={() => changeCurrency("usd")}
+									>
+										<img
+											alt=""
+											src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg"
+											className="block h-auto w-5 shrink-0"
+										/>
+										<span className="ml-3 block text-base font-medium text-gray-900">
+											EUR
+										</span>
+										<span className="sr-only">, change currency</span>
+									</button>
+								)}
 							</div>
 						</DialogPanel>
 					</div>
@@ -448,20 +474,40 @@ export const NavBar: React.FC = () => {
 
 								<div className="ml-auto flex items-center">
 									<div className="hidden lg:ml-8 lg:flex">
-										<a
-											href="#"
-											className="flex items-center text-gray-700 hover:text-gray-800"
-										>
-											<img
-												alt=""
-												src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
-												className="block h-auto w-5 shrink-0"
-											/>
-											<span className="ml-3 block text-sm font-medium">
-												USD
-											</span>
-											<span className="sr-only">, change currency</span>
-										</a>
+										{currency === "usd" && (
+											<button
+												type="button"
+												className="flex items-center text-gray-700 hover:text-gray-800"
+												onClick={() => changeCurrency("eur")}
+											>
+												<img
+													alt=""
+													src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
+													className="block h-auto w-5 shrink-0"
+												/>
+												<span className="ml-3 block text-sm font-medium">
+													USD
+												</span>
+												<span className="sr-only">, change currency</span>
+											</button>
+										)}
+										{currency === "eur" && (
+											<button
+												type="button"
+												className="flex items-center text-gray-700 hover:text-gray-800"
+												onClick={() => changeCurrency("usd")}
+											>
+												<img
+													alt=""
+													src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg"
+													className="block h-auto w-5 shrink-0"
+												/>
+												<span className="ml-3 block text-sm font-medium">
+													EUR
+												</span>
+												<span className="sr-only">, change currency</span>
+											</button>
+										)}
 									</div>
 
 									{/* Search */}
@@ -534,7 +580,8 @@ export const NavBar: React.FC = () => {
 
 											<div className="ml-8 flex flex-col justify-between">
 												<p>{product.title} </p>
-												<p>${product.price}</p>
+												{currency === "usd" && <p>${product.price.usd}</p>}
+												{currency === "eur" && <p>€{product.price.eur}</p>}
 											</div>
 										</a>
 									))}
