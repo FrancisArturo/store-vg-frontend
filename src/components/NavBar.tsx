@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState } from "react";
+import { Fragment, useRef, useState } from "react";
 import {
 	Dialog,
 	DialogBackdrop,
@@ -179,7 +179,6 @@ export const NavBar: React.FC = () => {
 	const [openSearchBar, setOpenSearchBar] = useState(false);
 	const [catSelected, setCatSelected] = useState("");
 	const [searchValue, setSearchValue] = useState("");
-	// const [productsFound, setProductsFound] = useState<Product[]>();
 
 	const { cartProducts } = useAppSelector((state) => state.cart);
 	const { categories: categoriesFound, totalProducts } = useAppSelector(
@@ -189,6 +188,11 @@ export const NavBar: React.FC = () => {
 	const searchIconRef = useRef<HTMLDivElement>(null);
 
 	const { setIsOpenCart } = useCartActions();
+
+	const onClickOpenSearch = () => {
+		setOpenSearchBar(!openSearchBar);
+		setSearchValue("");
+	};
 
 	const onClickCloseSearch = () => {
 		setOpenSearchBar(false);
@@ -212,14 +216,6 @@ export const NavBar: React.FC = () => {
 			: totalProducts.filter((product) =>
 					product.title.toLocaleLowerCase().trim().includes(searchValue),
 				);
-
-	// useEffect(() => {
-	// 	console.log(searchValue);
-	// 	const newSearch = totalProducts.filter((product) =>
-	// 		product.title.toLocaleLowerCase().trim().includes(searchValue),
-	// 	);
-	// 	setProductsFound(newSearch);
-	// }, [searchValue, totalProducts]);
 
 	return (
 		<>
@@ -313,26 +309,6 @@ export const NavBar: React.FC = () => {
 									</div>
 								))}
 							</div>
-
-							{/* <div className="space-y-6 border-t border-gray-200 px-4 py-6">
-								<div className="flow-root">
-									<a
-										href="#"
-										className="-m-2 block p-2 font-medium text-gray-900"
-									>
-										Sign in
-									</a>
-								</div>
-								<div className="flow-root">
-									<a
-										href="#"
-										className="-m-2 block p-2 font-medium text-gray-900"
-									>
-										Create account
-									</a>
-								</div>
-							</div> */}
-
 							<div className="border-t border-gray-200 px-4 py-6">
 								<a href="#" className="-m-2 flex items-center p-2">
 									<img
@@ -493,7 +469,7 @@ export const NavBar: React.FC = () => {
 										<button
 											type="button"
 											className="p-2 text-gray-400 hover:text-gray-500"
-											onClick={() => setOpenSearchBar(!openSearchBar)}
+											onClick={() => onClickOpenSearch()}
 										>
 											<span className="sr-only">Search</span>
 											<MagnifyingGlassIcon
@@ -531,33 +507,44 @@ export const NavBar: React.FC = () => {
 					className="flex flex-col items-end mx-auto lg:max-w-7xl "
 					ref={searchBarRef}
 				>
-					<div className="w-[350px] z-10 absolute duration-500">
-						<input
-							type="text"
-							placeholder="search by product title..."
-							className="w-[100%] rounded-sm bg-gray-200 py-1 px-3 "
-							onChange={onChangeInputSearch}
-						/>
+					<div className="w-[350px] z-20 absolute duration-500">
+						<div>
+							<input
+								type="text"
+								placeholder="search by product title..."
+								className="w-[100%] rounded-sm bg-gray-200 py-1 px-3"
+								onChange={onChangeInputSearch}
+								// biome-ignore lint/a11y/noAutofocus: <explanation>
+								autoFocus={true}
+							/>
+						</div>
 
 						<div className="w-[350px] absolute top[100%] bg-white border-2 border-gray-400 z-10">
-							<div>
-								{productsFound.map((product) => (
-									<a
-										key={product.sku}
-										className="flex  hover:bg-gray-200 p-4 border-b-2 border-gray-200 cursor-pointer"
-										href={`product/${product.sku}`}
-									>
-										<div className="h-16 w-16 overflow-hidden rounded-md border border-gray-200 bg-white">
-											<img src={product.thumbnail} alt={product.title} />
-										</div>
+							{productsFound && (
+								<div>
+									{productsFound.map((product) => (
+										<a
+											key={product.sku}
+											className="flex  hover:bg-gray-200 p-4 border-b-2 border-gray-200 cursor-pointer duration-200"
+											href={`product/${product.sku}`}
+										>
+											<div className="h-16 w-16 overflow-hidden rounded-md border border-gray-200 bg-white">
+												<img src={product.thumbnail} alt={product.title} />
+											</div>
 
-										<div className="ml-8 flex flex-col justify-between">
-											<p>{product.title} </p>
-											<p>${product.price}</p>
-										</div>
-									</a>
-								))}
-							</div>
+											<div className="ml-8 flex flex-col justify-between">
+												<p>{product.title} </p>
+												<p>${product.price}</p>
+											</div>
+										</a>
+									))}
+								</div>
+							)}
+							{searchValue && productsFound.length === 0 && (
+								<div className="text-center w-[100%] h-[100%] overflow-hidden rounded-md border border-gray-200 bg-white p-4">
+									<p>No Results Found</p>
+								</div>
+							)}
 						</div>
 					</div>
 				</div>

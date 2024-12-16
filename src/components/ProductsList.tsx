@@ -19,19 +19,9 @@ export const ProductsList: React.FC = () => {
 
 	const { cat } = useParams();
 
-	// console.log(categories);
-
 	const categorySelected = cat
 		? categories.find((item) => item.title.toLowerCase() === cat)
 		: { title: "All Products", quantity: 37 };
-
-	// const filteredProducts = products.filter((product) => {
-	// 	return (
-	// 		// (!cat || product.category === category?.title) &&
-	// 		product.price > minPrice && (maxPrice === 0 || product.price < maxPrice)
-	// 		// (!brand || product.brand === brand)
-	// 	);
-	// });
 
 	const handleScroll = debounce(() => {
 		if (
@@ -112,12 +102,6 @@ export const ProductsList: React.FC = () => {
 							<ProductItem product={product} key={product.sku} />
 						))}
 					</div>
-					{/* <button
-						type="button"
-						onClick={() => handleCurrentPage(currentPage + 1)}
-					>
-						More
-					</button> */}
 				</div>
 			)}
 		</>
