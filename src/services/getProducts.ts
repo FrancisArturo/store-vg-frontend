@@ -9,7 +9,7 @@ export const getProducts = async (
 	brand?: string,
 	minPrice?: number,
 	maxPrice?: number,
-): Promise<[Error?, Product[]?, boolean?, Product[]?]> => {
+): Promise<[Error?, Product[]?, boolean?, Product[]?, Product[]?]> => {
 	try {
 		const res = await fetch(
 			`${API_URL}?page=${page}&currency=${currency}&cat=${category}&brand=${brand}&minPrice=${minPrice}&maxPrice=${maxPrice}`,
@@ -22,6 +22,7 @@ export const getProducts = async (
 			data.products.docs,
 			data.products.hasNextPage,
 			data.totalProducts,
+			data.totalProductsWithQuery,
 		];
 	} catch (error) {
 		if (error instanceof Error) return [error];

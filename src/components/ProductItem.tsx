@@ -28,10 +28,16 @@ export const ProductItem: React.FC<Props> = ({ product }) => {
 			<div className="flex justify-between">
 				<div>
 					<h3 className="mt-4 text-sm text-gray-700">{product.title}</h3>
-					<p className="mt-1 text-lg font-medium text-gray-900">
-						{currency === "usd" && <p>$ {product.price.usd}</p>}
-						{currency === "eur" && <p>€ {product.price.eur}</p>}
-					</p>
+					{currency === "usd" && (
+						<p className="mt-1 text-lg font-medium text-gray-900">
+							$ {product.price.usd}
+						</p>
+					)}
+					{currency === "eur" && (
+						<p className="mt-1 text-lg font-medium text-gray-900">
+							€ {product.price.eur}
+						</p>
+					)}
 				</div>
 				{isProductInCart(product) ? (
 					<div className="self-center text-3xl mr-2 text-gray-300 box">

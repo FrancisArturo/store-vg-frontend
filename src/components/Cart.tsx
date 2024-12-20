@@ -8,7 +8,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { useCartActions } from "../hooks/useCartActions";
 import { useAppSelector } from "../hooks/store";
 import { useEffect } from "react";
-import { saveCartLocalStorage } from "../services/saveCart";
+import { saveCartLocalStorage } from "../services/cartLocalStorage";
 import { AiOutlineMinusSquare, AiOutlinePlusSquare } from "react-icons/ai";
 
 export const Cart: React.FC = () => {

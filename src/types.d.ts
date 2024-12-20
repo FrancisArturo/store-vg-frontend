@@ -70,6 +70,7 @@ export type ApiGetProductsRes = {
 	ok: boolean;
 	products: ProductsRes;
 	totalProducts: Product[];
+	totalProductsWithQuery: Product[];
 };
 
 export type ApiGetProductRes = {
@@ -103,6 +104,7 @@ export interface ProductInCart {
 export interface ProductsStoreState {
 	products: Product[];
 	totalProducts: Product[];
+	totalProductsWithQuery: Product[];
 	categories: CategoryFound[];
 	isLoading: boolean;
 	hasNextPage: boolean;
@@ -114,11 +116,11 @@ export interface CartStoreState {
 }
 
 export interface FiltersStoreState {
+	currentPage: number;
+	currency: string;
+	brand: string;
 	minPrice: number;
 	maxPrice: number;
-	currentPage: number;
-	category: string;
-	brand: string;
 }
 
 export interface CheckoutData {

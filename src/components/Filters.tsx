@@ -12,20 +12,23 @@ import {
 } from "react-icons/bi";
 
 interface Props {
-	totalProducts: Product[];
+	totalProductsWithQuery: Product[];
 	isLoading: boolean;
 }
 
-export const Filters: React.FC<Props> = ({ totalProducts, isLoading }) => {
+export const Filters: React.FC<Props> = ({
+	totalProductsWithQuery,
+	isLoading,
+}) => {
 	// const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
-	const { brand, minPrice, maxPrice } = useAppSelector(
+	const { brand, minPrice, maxPrice, currency } = useAppSelector(
 		(store) => store.filters,
 	);
 	const { addMinPriceFilter, addMaxPriceFilter, addBrandFilter } =
 		useFiltersActions();
 
-	const brandsFounded = searchBrands(totalProducts);
+	const brandsFounded = searchBrands(totalProductsWithQuery);
 
 	const onSubmitFilterPrice = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -103,19 +106,44 @@ export const Filters: React.FC<Props> = ({ totalProducts, isLoading }) => {
 								<p className="mr-3 text-gray-700 text-sm font-medium">
 									Price:{" "}
 								</p>
-								<input
-									type="text"
-									className="w-20 text-center bg-gray-300 rounded-md"
-									placeholder="$ Min"
-									name="minPrice"
-								/>
-								<BiMinus className="text-2xl" />
-								<input
-									type="text"
-									className="w-20 text-center bg-gray-300 rounded-md"
-									placeholder="$ Max"
-									name="maxPrice"
-								/>
+								{currency === "usd" && (
+									<>
+										<input
+											type="text"
+											className="w-20 text-center bg-gray-300 rounded-md"
+											placeholder="$ Min"
+											name="minPrice"
+											defaultValue={minPrice > 0 ? `${minPrice}` : ""}
+										/>
+										<BiMinus className="text-2xl" />
+										<input
+											type="text"
+											className="w-20 text-center bg-gray-300 rounded-md"
+											placeholder="$ Max"
+											name="maxPrice"
+											defaultValue={maxPrice > 0 ? `${maxPrice}` : ""}
+										/>
+									</>
+								)}
+								{currency === "eur" && (
+									<>
+										<input
+											type="text"
+											className="w-20 text-center bg-gray-300 rounded-md"
+											placeholder="€ Min"
+											name="minPrice"
+											defaultValue={minPrice > 0 ? `${minPrice}` : ""}
+										/>
+										<BiMinus className="text-2xl" />
+										<input
+											type="text"
+											className="w-20 text-center bg-gray-300 rounded-md"
+											placeholder="€ Max"
+											name="maxPrice"
+											defaultValue={maxPrice > 0 ? `${maxPrice}` : ""}
+										/>
+									</>
+								)}
 								{isLoading ? (
 									<>
 										<svg

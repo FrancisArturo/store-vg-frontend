@@ -6,6 +6,7 @@ import {
 	setProducts,
 	setProductsScroll,
 	setTotalProducts,
+	setTotalProductsWithQuery,
 } from "../store/products/slice";
 import { useAppDispatch } from "./store";
 import { getCategories } from "../services/getCategories";
@@ -25,28 +26,28 @@ export const useProductsActions = () => {
 	) => {
 		console.log("llamada getAllProducts");
 		dispatch(setIsLoading(true));
-		const [err, products, hasNextPage, totalProducts] = await getProducts(
-			page,
-			currency,
-			category,
-			brand,
-			minPrice,
-			maxPrice,
-		);
+		const [err, products, hasNextPage, totalProducts, totalProductsWithQuery] =
+			await getProducts(page, currency, category, brand, minPrice, maxPrice);
 		dispatch(setIsLoading(false));
 		console.log(prevCurrency);
+
 		if (err) return console.error(err);
+
 		dispatch(setHasNextPage(hasNextPage as boolean));
 		if (products && page !== 1 && prevCurrency === currency) {
 			dispatch(setProductsScroll(products));
 		}
+
 		if (
 			(products && page === 1) ||
 			(products && prevCurrency.length !== 0 && prevCurrency !== currency)
 		) {
 			dispatch(setProducts(products));
 		}
+
 		if (totalProducts) dispatch(setTotalProducts(totalProducts));
+		if (totalProductsWithQuery)
+			dispatch(setTotalProductsWithQuery(totalProductsWithQuery));
 		setPrevCurrency(currency);
 	};
 

@@ -10,10 +10,9 @@ export const getCartLocalStorage = (): CartStoreState => {
 	if (data) {
 		return JSON.parse(data);
 	}
-	const defaultData = {
+	return {
 		cartProducts: [],
 		amount: 0,
 		isOpen: false,
 	};
-	return defaultData;
 };

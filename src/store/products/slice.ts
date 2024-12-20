@@ -4,6 +4,7 @@ import type { CategoryFound, Product, ProductsStoreState } from "../../types";
 const initialState: ProductsStoreState = {
 	products: [],
 	totalProducts: [],
+	totalProductsWithQuery: [],
 	categories: [],
 	isLoading: false,
 	hasNextPage: false,
@@ -22,6 +23,9 @@ export const productsSlice = createSlice({
 		setTotalProducts: (state, action: PayloadAction<Product[]>) => {
 			state.totalProducts = [...action.payload];
 		},
+		setTotalProductsWithQuery: (state, action: PayloadAction<Product[]>) => {
+			state.totalProductsWithQuery = [...action.payload];
+		},
 		setCategories: (state, action: PayloadAction<CategoryFound[]>) => {
 			state.categories.push(...action.payload);
 		},
@@ -38,6 +42,7 @@ export const {
 	setProducts,
 	setProductsScroll,
 	setTotalProducts,
+	setTotalProductsWithQuery,
 	setCategories,
 	setIsLoading,
 	setHasNextPage,

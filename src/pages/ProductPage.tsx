@@ -90,6 +90,7 @@ import { useCheckCartProduct } from "../hooks/useCheckCartProduct";
 import type { Product } from "../types";
 import { useCartActions } from "../hooks/useCartActions";
 import { getProduct } from "../services/getProduct";
+import { useAppSelector } from "../hooks/store";
 
 const product = {
 	name: "Basic Tee 6-Pack",
@@ -158,7 +159,7 @@ export const ProductPage = () => {
 	const { pid } = useParams();
 	// const { products: productsFound } = useAppSelector((state) => state.products);
 	const { addProductToCart } = useCartActions();
-
+	const { currency } = useAppSelector((state) => state.filters);
 	const { isProductInCart } = useCheckCartProduct();
 
 	const getProductSelected = async () => {
@@ -185,16 +186,6 @@ export const ProductPage = () => {
 		getProductSelected();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-	// useEffect(() => {
-	// 	if (productsFound.length > 0) {
-	// 		const product = getProduct();
-	// 		if (product) return setProductFound(product);
-	// 		// return setError("Product not found");
-	// 	}
-	// 	// eslint-disable-next-line react-hooks/exhaustive-deps
-	// }, [pid, productsFound]);
 
 	return (
 		<>
@@ -248,9 +239,16 @@ export const ProductPage = () => {
 							<div className="mt-4 lg:row-span-3 lg:mt-0 order-last">
 								<h2 className="sr-only">Product information</h2>
 								<div className="flex justify-between items-center">
-									<p className="text-3xl tracking-tight text-gray-900">
-										$ {productFound?.price}
-									</p>
+									{currency === "usd" && (
+										<p className="text-3xl tracking-tight text-gray-900">
+											$ {productFound.price.usd}
+										</p>
+									)}
+									{currency === "eur" && (
+										<p className="text-3xl tracking-tight text-gray-900">
+											€ {productFound.price.eur}
+										</p>
+									)}
 									<img
 										src={productFound.logo}
 										alt=""

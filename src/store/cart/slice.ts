@@ -4,7 +4,7 @@ import type {
 	ProductInCart,
 	ProductInCartId,
 } from "../../types";
-import { getCartLocalStorage } from "../../services/saveCart";
+import { getCartLocalStorage } from "../../services/cartLocalStorage";
 
 export const cartSlice = createSlice({
 	name: "cart",
