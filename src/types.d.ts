@@ -105,9 +105,11 @@ export interface ProductsStoreState {
 	products: Product[];
 	totalProducts: Product[];
 	totalProductsWithQuery: Product[];
+	productSelected?: Product;
 	categories: CategoryFound[];
 	isLoading: boolean;
 	hasNextPage: boolean;
+	error?: Error;
 }
 export interface CartStoreState {
 	cartProducts: ProductInCart[];

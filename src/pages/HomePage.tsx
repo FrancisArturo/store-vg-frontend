@@ -1,12 +1,16 @@
 import { useEffect } from "react";
 import { useProductsActions } from "../hooks/useProductsActions";
+import { useAppSelector } from "../hooks/store";
+import { saveCurrencyLocalStorage } from "../services/filtersLocalStorage";
 
 export const HomePage = () => {
 	const { getAllProducts } = useProductsActions();
+	const { currency } = useAppSelector((state) => state.filters);
 
 	useEffect(() => {
-		getAllProducts(1, "undefined", "", 0, 0);
-	}, [getAllProducts]);
+		getAllProducts(1, currency, "undefined", "", 0, 0);
+		saveCurrencyLocalStorage(currency);
+	}, [getAllProducts, currency]);
 
 	return (
 		<div className="flex h-[calc(100vh-105px)] justify-center items-center">

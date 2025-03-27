@@ -39,19 +39,23 @@ export const ProductItem: React.FC<Props> = ({ product }) => {
 						</p>
 					)}
 				</div>
-				{isProductInCart(product) ? (
-					<div className="self-center text-3xl mr-2 text-gray-300 box">
-						<BsCartCheckFill />
-					</div>
-				) : (
-					// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
-					<div
-						className="self-center text-3xl mr-2 cursor-pointer box"
-						onClick={() => addProductToCart(product)}
-					>
-						<BsCartPlusFill />
-					</div>
+				{product.availabilityStatus === "Out of Stock" && (
+					<p className="self-center text-gray-500">Out of Stock</p>
 				)}
+				{product.availabilityStatus !== "Out of Stock" &&
+					(isProductInCart(product) ? (
+						<div className="self-center text-3xl mr-2 text-gray-300 box">
+							<BsCartCheckFill />
+						</div>
+					) : (
+						// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
+						<div
+							className="self-center text-3xl mr-2 cursor-pointer box"
+							onClick={() => addProductToCart(product)}
+						>
+							<BsCartPlusFill />
+						</div>
+					))}
 			</div>
 		</div>
 	);

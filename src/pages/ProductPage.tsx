@@ -81,16 +81,14 @@
 
 import { useEffect, useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
-
 import { StarIcon } from "@heroicons/react/20/solid";
 import { Radio, RadioGroup } from "@headlessui/react";
-// import { useAppSelector } from "../hooks/store";
 import { useParams } from "react-router-dom";
 import { useCheckCartProduct } from "../hooks/useCheckCartProduct";
-import type { Product } from "../types";
 import { useCartActions } from "../hooks/useCartActions";
-import { getProduct } from "../services/getProduct";
 import { useAppSelector } from "../hooks/store";
+import { saveCurrencyLocalStorage } from "../services/filtersLocalStorage";
+import { useProductsActions } from "../hooks/useProductsActions";
 
 const product = {
 	name: "Basic Tee 6-Pack",
@@ -152,23 +150,17 @@ function classNames(...classes) {
 
 export const ProductPage = () => {
 	const [selectedColor, setSelectedColor] = useState(product.colors[0]);
-	const [productFound, setProductFound] = useState<Product>();
-	const [error, setError] = useState<Error>();
 	const [indexSlide, setIndexSlide] = useState(0);
 
-	const { pid } = useParams();
-	// const { products: productsFound } = useAppSelector((state) => state.products);
-	const { addProductToCart } = useCartActions();
+	const { productSelected } = useAppSelector((state) => state.products);
 	const { currency } = useAppSelector((state) => state.filters);
+
+	const { addProductToCart } = useCartActions();
+	const { getAllProducts, getProductSelected } = useProductsActions();
+
 	const { isProductInCart } = useCheckCartProduct();
 
-	const getProductSelected = async () => {
-		const [error, product] = await getProduct(pid as string);
-		if (product) setProductFound(product);
-		if (error) setError(error);
-	};
-
-	// const productFound = pid && getProduct(pid);
+	const { pid } = useParams();
 
 	const prevSlide = () => {
 		if (indexSlide === 0) return;
@@ -176,20 +168,25 @@ export const ProductPage = () => {
 	};
 
 	const nextSlide = () => {
-		if (!productFound?.images) return;
-		if (indexSlide === productFound?.images.length - 1) return;
+		if (!productSelected?.images) return;
+		if (indexSlide === productSelected?.images.length - 1) return;
 		setIndexSlide(indexSlide + 1);
 	};
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
-		getProductSelected();
+		getProductSelected(pid as string);
+		getAllProducts(1, currency, "undefined", "", 0, 0);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
+	useEffect(() => {
+		saveCurrencyLocalStorage(currency);
+	}, [currency]);
+
 	return (
 		<>
-			{productFound && (
+			{productSelected && (
 				<div>
 					<div className="pt-6">
 						<nav aria-label="Breadcrumb">
@@ -197,10 +194,10 @@ export const ProductPage = () => {
 								<li>
 									<div className="flex items-center">
 										<a
-											href={`/products/${productFound.category.toLowerCase()}`}
+											href={`/products/${productSelected.category.toLowerCase()}`}
 											className="mr-2 text-sm font-medium text-gray-900"
 										>
-											{productFound.category}
+											{productSelected.category}
 										</a>
 										<svg
 											fill="currentColor"
@@ -221,7 +218,7 @@ export const ProductPage = () => {
 										aria-current="page"
 										className="font-medium text-gray-500 hover:text-gray-600"
 									>
-										{productFound.title}
+										{productSelected.title}
 									</a>
 								</li>
 							</ol>
@@ -231,7 +228,7 @@ export const ProductPage = () => {
 						<div className="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 flex flex-col">
 							<div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
 								<h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-									{productFound?.title}
+									{productSelected?.title}
 								</h1>
 							</div>
 
@@ -241,16 +238,16 @@ export const ProductPage = () => {
 								<div className="flex justify-between items-center">
 									{currency === "usd" && (
 										<p className="text-3xl tracking-tight text-gray-900">
-											$ {productFound.price.usd}
+											$ {productSelected.price.usd}
 										</p>
 									)}
 									{currency === "eur" && (
 										<p className="text-3xl tracking-tight text-gray-900">
-											€ {productFound.price.eur}
+											€ {productSelected.price.eur}
 										</p>
 									)}
 									<img
-										src={productFound.logo}
+										src={productSelected.logo}
 										alt=""
 										className="max-w-[85px] max-h-[40px] "
 									/>
@@ -266,7 +263,7 @@ export const ProductPage = () => {
 													key={rating}
 													aria-hidden="true"
 													className={classNames(
-														productFound.rating > rating
+														productSelected.rating > rating
 															? "text-gray-900"
 															: "text-gray-200",
 														"h-5 w-5 shrink-0",
@@ -275,13 +272,13 @@ export const ProductPage = () => {
 											))}
 										</div>
 										<p className="sr-only">
-											{productFound.rating} out of 5 stars
+											{productSelected.rating} out of 5 stars
 										</p>
 										<a
 											href={reviews.href}
 											className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500"
 										>
-											{productFound.reviewsNumber} reviews
+											{productSelected.reviewsNumber} reviews
 										</a>
 									</div>
 								</div>
@@ -320,31 +317,41 @@ export const ProductPage = () => {
 										</fieldset>
 									</div>
 									<div className="mt-14">
-										<p>{productFound?.description}</p>
+										<p>{productSelected?.description}</p>
 									</div>
-									{isProductInCart(productFound) ? (
+									{productSelected.availabilityStatus === "Out of Stock" && (
 										<button
 											type="submit"
 											className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-gray-300 px-8 py-3 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
 											disabled
 										>
-											Already in Cart
-										</button>
-									) : (
-										<button
-											type="submit"
-											className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-black  px-8 py-3 text-base font-medium text-white hover:bg-gray-500 hover:text-white  focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 duration-500"
-											onClick={() => addProductToCart(productFound)}
-										>
-											Add to Cart
+											Out of Stock
 										</button>
 									)}
+									{productSelected.availabilityStatus === "In Stock" &&
+										(isProductInCart(productSelected) ? (
+											<button
+												type="submit"
+												className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-gray-300 px-8 py-3 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+												disabled
+											>
+												Already in Cart
+											</button>
+										) : (
+											<button
+												type="submit"
+												className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-black  px-8 py-3 text-base font-medium text-white hover:bg-gray-500 hover:text-white  focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 duration-500"
+												onClick={() => addProductToCart(productSelected)}
+											>
+												Add to Cart
+											</button>
+										))}
 								</form>
 							</div>
 
 							<div className="flex flex-col-reverse lg:flex-row gap-x-10 gap-y-4 p-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pt-6 ">
 								<div className="flex flex-wrap mt-2 gap-x-2 gap-y-2 lg:flex-col">
-									{productFound?.images.map((image, index) => (
+									{productSelected?.images.map((image, index) => (
 										<div
 											className="h-[115px] relative w-[100%] sm:max-w-[84px] sm:max-h-[84px] max-w-[45px] max-h-[45px] ml-0 md:mr-5 mr-2 mb-8 mt-0 cursor-pointer "
 											// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
@@ -369,7 +376,7 @@ export const ProductPage = () => {
 										className="flex transition-transform ease-out duration-500"
 										style={{ transform: `translateX(-${indexSlide * 100}%)` }}
 									>
-										{productFound.images.map((image) => (
+										{productSelected.images.map((image) => (
 											<img
 												src={image}
 												alt={image}
@@ -403,7 +410,7 @@ export const ProductPage = () => {
 								<p>Recent Reviews</p>
 							</div>
 							<div className="flex flex-col gap-y-16  w-[100%] h-[100%]">
-								{productFound.reviews.map((review) => (
+								{productSelected.reviews.map((review) => (
 									<div
 										key={review.reviewerEmail}
 										className="flex justify-between border-solid border-b-2 border-gray-100 lg:flex-row flex-col gap-y-5"
@@ -415,7 +422,7 @@ export const ProductPage = () => {
 														key={rating}
 														aria-hidden="true"
 														className={classNames(
-															productFound.rating > rating
+															productSelected.rating > rating
 																? "text-gray-900"
 																: "text-gray-200",
 															"h-5 w-5 shrink-0",

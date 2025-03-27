@@ -52,6 +52,9 @@ export const ProductsList: React.FC = () => {
 	useEffect(() => {
 		getAllProducts(currentPage, currency, cat, brand, minPrice, maxPrice);
 		saveCurrencyLocalStorage(currency);
+		const url = new URL("https://www.google.com/");
+		url.searchParams.set("q", "hola");
+		console.log(url);
 		saveFiltersLocalStorage({
 			currentPage: 1,
 			brand,

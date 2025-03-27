@@ -1,9 +1,11 @@
 import { getProducts } from "../services/getProducts";
 import {
 	setCategories,
+	setError,
 	setHasNextPage,
 	setIsLoading,
 	setProducts,
+	setProductSelected,
 	setProductsScroll,
 	setTotalProducts,
 	setTotalProductsWithQuery,
@@ -11,6 +13,7 @@ import {
 import { useAppDispatch } from "./store";
 import { getCategories } from "../services/getCategories";
 import { useState } from "react";
+import { getProduct } from "../services/getProduct";
 
 export const useProductsActions = () => {
 	const dispatch = useAppDispatch();
@@ -51,6 +54,14 @@ export const useProductsActions = () => {
 		setPrevCurrency(currency);
 	};
 
+	const getProductSelected = async (pid: string) => {
+		const [error, product] = await getProduct(pid);
+		console.log(product);
+
+		if (product) dispatch(setProductSelected(product));
+		if (error) dispatch(setError(error));
+	};
+
 	const getAllCategories = async () => {
 		console.log("llamada getAllCategories");
 		const [err, categories] = await getCategories();
@@ -62,6 +73,7 @@ export const useProductsActions = () => {
 
 	return {
 		getAllProducts,
+		getProductSelected,
 		getAllCategories,
 	};
 };

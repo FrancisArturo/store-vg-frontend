@@ -5,9 +5,11 @@ const initialState: ProductsStoreState = {
 	products: [],
 	totalProducts: [],
 	totalProductsWithQuery: [],
+	productSelected: undefined,
 	categories: [],
 	isLoading: false,
 	hasNextPage: false,
+	error: undefined,
 };
 
 export const productsSlice = createSlice({
@@ -26,6 +28,9 @@ export const productsSlice = createSlice({
 		setTotalProductsWithQuery: (state, action: PayloadAction<Product[]>) => {
 			state.totalProductsWithQuery = [...action.payload];
 		},
+		setProductSelected: (state, action: PayloadAction<Product>) => {
+			state.productSelected = { ...action.payload };
+		},
 		setCategories: (state, action: PayloadAction<CategoryFound[]>) => {
 			state.categories.push(...action.payload);
 		},
@@ -35,6 +40,9 @@ export const productsSlice = createSlice({
 		setHasNextPage: (state, action: PayloadAction<boolean>) => {
 			state.hasNextPage = action.payload;
 		},
+		setError: (state, action: PayloadAction<Error>) => {
+			state.error = action.payload;
+		},
 	},
 });
 
@@ -43,7 +51,9 @@ export const {
 	setProductsScroll,
 	setTotalProducts,
 	setTotalProductsWithQuery,
+	setProductSelected,
 	setCategories,
 	setIsLoading,
 	setHasNextPage,
+	setError,
 } = productsSlice.actions;
